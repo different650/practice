@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>왜토마토</title>
+
+  <link rel="stylesheet" href="css/import.css">
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="js/tomato.js"></script>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>
+        <a href="#visual">
+          <img src="images/logo.png" alt="logo">
+        </a>
+      </h1>
+
+      <nav>
+        <ul>
+          <li><a href="#visual">토마토 나라</a></li>
+          <li><a href="#varieties">토마토 친구들</a></li>
+          <li><a href="#benefits">토마토 매력</a></li>
+          <li><a href="#recipes">토마토 요리</a></li>
+          <li><a href="#growing">토마토 농장</a></li>
+          <li><a href="#galler">토마토 사진관</a></li>
+        </ul>
+
+        <!-- 햄버거 아이콘 -->
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+
+      <div class="searchBox">
+        <input type="search" placeholder="검색어 입력">
+        <button aria-label="검색"></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 비주얼 -->
+    <section id="visual">
+      <div>
+        <h2>토마토인데 왜 토마토</h2>
+      </div>
+    </section>
+
+    <!-- 속담 -->
+    <section id="proverb">
+      <h2>"사과가 되지 말고 도마도가 되라"</h2>
+      <span>사과처럼 겉만 붉고 속은 흰 사람이 되지 말고 토마토처럼 겉과 속이 같은 견실한 사람이 되라는 말.</span>
+    </section>
+
+    <!-- 종류 -->
+    <section id="varieties">
+      <div>
+        <div>
+          <h2>토마토 종류</h2>
+          <a href="#" class="moreBtn">전체 보기 ></a>
+        </div>
+
+        <div>
+          <!-- 토마토 -->
+          <div class="card">
+            <img src="images/varieties_commonTomato.png">
+            <h3>토마토</h3>
+            <p>가장 기본이 되는 토마토</p>
+
+            <div>
+              <div>
+                <span class="close"></span>
+                <h4>토마토</h4>
+                <p>크기: 중간~큼</p>
+                <p>맛: 단맛과 산미 균형</p>
+                <p>식감: 부드러움</p>
+                <p>특징: 가장 흔한 토마토</p>
+                <p>활용: 샐러드, 요리</p>
+              </div>
+
+              <div>
+                <p>칼로리: 18kcal</p>
+                <p>당류: 2.6g</p>
+                <p>라이코펜: 풍부</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 방울 -->
+          <div class="card">
+            <img src="images/varieties_cherryTomato.png">
+            <h3>방울토마토</h3>
+            <p>한입에 먹기 좋은 간식</p>
+
+            <div>
+              <div>
+                <span class="close"></span>
+                <h4>방울토마토</h4>
+                <p>크기: 작음</p>
+                <p>맛: 달콤함</p>
+                <p>식감: 탱글함</p>
+                <p>특징: 간식용 인기</p>
+                <p>활용: 간식, 도시락</p>
+              </div>
+
+              <div>
+                <p>칼로리: 20kcal</p>
+                <p>당류: 3.5g</p>
+                <p>비타민C: 풍부</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 대추 -->
+          <div class="card">
+            <img src="images/varieties_grapeTomato.png">
+            <h3>대추토마토</h3>
+            <p>당도가 높은 토마토</p>
+
+            <div>
+              <div>
+                <span class="close"></span>
+                <h4>대추토마토</h4>
+                <p>크기: 작고 길쭉</p>
+                <p>맛: 진한 단맛</p>
+                <p>식감: 쫀득함</p>
+                <p>특징: 당도 높음</p>
+                <p>활용: 샐러드</p>
+              </div>
+
+              <div>
+                <p>칼로리: 22kcal</p>
+                <p>당류: 4.0g</p>
+                <p>당도: 높음</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 짭짤이 -->
+          <div class="card">
+            <img src="images/varieties_daejeonSaltyTomato.png">
+            <h3>대저 짭짤이 토마토</h3>
+            <p>짭짤한 단맛</p>
+
+            <div>
+              <div>
+                <span class="close"></span>
+                <h4>대저 짭짤이 토마토</h4>
+                <p>크기: 중간</p>
+                <p>맛: 짭짤하고 달콤함</p>
+                <p>식감: 부드러움</p>
+                <p>특징: 부산 대저 특산</p>
+                <p>활용: 생식</p>
+              </div>
+
+              <div>
+                <p>칼로리: 18kcal</p>
+                <p>당류: 2.8g</p>
+                <p>미네랄: 풍부</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 흑 -->
+          <div class="card">
+            <img src="images/varieties_blackTomato.png">
+            <h3>흑토마토</h3>
+            <p>풍미가 깊은 토마토</p>
+
+            <div>
+              <div>
+                <span class="close"></span>
+                <h4>흑토마토</h4>
+                <p>크기: 중간</p>
+                <p>맛: 깊은 단맛</p>
+                <p>식감: 부드러움</p>
+                <p>특징: 프리미엄 느낌</p>
+                <p>활용: 샐러드</p>
+              </div>
+
+              <div>
+                <p>칼로리: 19kcal</p>
+                <p>당류: 2.7g</p>
+                <p>항산화: 높음</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 노란 -->
+          <div class="card">
+            <img src="images/varieties_yellowTomato.png">
+            <h3>노란토마토</h3>
+            <p>색감이 매력적인 토마토</p>
+
+            <div>
+              <div>
+                <span class="close"></span>
+                <h4>노란토마토</h4>
+                <p>크기: 다양</p>
+                <p>맛: 부드러운 단맛</p>
+                <p>식감: 부드러움</p>
+                <p>특징: 색이 예쁨</p>
+                <p>활용: 샐러드, 장식</p>
+              </div>
+
+              <div>
+                <p>칼로리: 17kcal</p>
+                <p>당류: 2.5g</p>
+                <p>베타카로틴: 풍부</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- 효능 -->
+    <section id="benefits">
+      <!-- 라디오 -->
+      <input type="radio" name="tab" id="t1" checked>
+      <input type="radio" name="tab" id="t2">
+      <input type="radio" name="tab" id="t3">
+      <input type="radio" name="tab" id="t4">
+      <input type="radio" name="tab" id="t5">
+      <input type="radio" name="tab" id="t6">
+      <input type="radio" name="tab" id="t7">
+
+      <div>
+        <!-- 왼쪽 (내용) -->
+        <div>
+          <h2>토마토의 매력</h2>
+          <div class="c1">
+            <img src="images/tomatoCharm_antioxidant.png">
+            <p>토마토의 라이코펜이 활성산소를 줄여줘 세포 손상을 막고 노화 예방에 도움을 줍니다.</p>
+          </div>
+
+          <div class="c2">
+            <img src="images/tomatoCharm_skin.png">
+            <p>비타민 C가 콜라겐 생성을 도와 피부를 탄력 있고 건강하게 유지하는 데 도움이 됩니다.</p>
+          </div>
+
+          <div class="c3">
+            <img src="images/tomatoCharm_vascular.png">
+            <p>라이코펜과 칼륨이 혈압을 안정시키고 혈관 건강을 지키는 데 도움을 줄 수 있어요.</p>
+          </div>
+
+          <div class="c4">
+            <img src="images/tomatoCharm_diet.png">
+            <p>칼로리가 낮고 수분이 많아 포만감을 주기 때문에 다이어트 식단에 부담 없이 활용하기 좋습니다.</p>
+          </div>
+
+          <div class="c5">
+            <img src="images/tomatoCharm_gutt.png">
+            <p>식이섬유가 장 운동을 도와 변비 예방과 장 건강에 도움을 줍니다.</p>
+          </div>
+
+          <div class="c6">
+            <img src="images/tomatoCharm_eye.png">
+            <p>비타민 A와 루테인이 풍부해 눈의 피로를 줄이고 시력 보호에 도움을 줍니다.</p>
+          </div>
+
+          <div class="c7">
+            <img src="images/tomatoCharm_immunity.png">
+            <p>비타민 C와 항산화 성분이 면역력을 높이고 몸의 방어력을 강화하는 데 도움을 줍니다.</p>
+          </div>
+        </div>
+
+        <!-- 오른쪽 (원형 메뉴) -->
+        <div class="circle-menu">
+          <div class="circle">
+            <img src="images/tomatoCharm.png">
+          </div>
+
+          <label for="t1">항산화 ·</label>
+          <label for="t2">피부 ·</label>
+          <label for="t3">혈관 ·</label>
+          <label for="t4">다이어트 ·</label>
+          <label for="t5">장 건강 ·</label>
+          <label for="t6">눈 건강 ·</label>
+          <label for="t7">면역력 ·</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 레시피 -->
+    <section id="recipes">
+      <div>
+        <div>
+          <h2>토마토 요리</h2>
+          <a href="#" class="moreBtn">전체 보기 ></a>
+        </div>
+
+        <div>
+          <a href="#">
+            <figure class="recipeCard">
+              <img src="images/recipes_tomatoEggStir-Fry.png" alt="토마토 달걀 볶음">
+
+              <figcaption>
+                <h3>토마토 달걀 볶음
+                  <span>></span>
+                </h3>
+
+                <p>토마토와 달걀을 볶아 만드는 부드럽고 고소한 요리</p>
+
+                <span>쉬움</span>
+                <span>약 10분</span>
+
+                <div>
+                  <span>한 끼 요리</span>
+                  <span>간단 요리</span>
+                </div>
+              </figcaption>
+            </figure>
+          </a>
+
+          <a href="#">
+            <figure class="recipeCard">
+              <img src="images/recipes_tomatoPasta.png" alt="토마토 파스타">
+
+              <figcaption>
+                <h3>토마토 파스타
+                  <span>></span>
+                </h3>
+
+                <p>토마토 소스를 활용한 클래식하고 대중적인 파스타</p>
+
+                <span>보통</span>
+                <span>약 20분</span>
+
+                <div>
+                  <span>한 끼 요리</span>
+                  <span>양식</span>
+                </div>
+              </figcaption>
+            </figure>
+          </a>
+
+          <a href="#">
+            <figure class="recipeCard">
+              <img src="images/recipes_capreseSalad.jpg" alt="카프레제 샐러드">
+
+              <figcaption>
+                <h3>카프레제 샐러드
+                  <span>></span>
+                </h3>
+
+                <p>마토와 모짜렐라 치즈로 만드는 상큼한 샐러드</p>
+
+                <span>쉬움</span>
+                <span>약 5분</span>
+
+                <div>
+                  <span>샐러드</span>
+                  <span>양식</span>
+                </div>
+              </figcaption>
+            </figure>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 키우기 -->
+    <section id="growing">
+      <figure>
+        <div>
+          <img src="images/growing.jpg" alt="토마토 농장">
+        </div>
+
+        <figcaption>
+          <h2>토마토 농장</h2>
+
+          <ul>
+            <li>
+              <h3>장소와 시기 선택</h3>
+              <p>햇볕 잘 드는 따뜻한 곳이 좋아요.</p>
+              <p>봄이나 초여름, 서리가 지난 뒤 심는 게 적기입니다.</p>
+            </li>
+
+            <li>
+              <h3>씨앗 또는 모종 준비</h3>
+              <p>씨앗은 실내에서 6~8주 전 미리 싹 틔우기.</p>
+              <p>모종은 잎이 초록빛 나고 튼튼한 것 선택.</p>
+            </li>
+
+            <li>
+              <h3>토양 준비와 심기</h3>
+              <p>배수 잘 되는 흙 + 유기질 비료 섞기.</p>
+              <p>약산성(Ph 6.0~6.8) 흙이 좋아요.</p>
+              <p>씨앗 0.5~1cm, 모종은 뿌리 충분히 덮고 40~60cm 간격 유지.</p>
+            </li>
+
+            <li>
+              <h3>물주기와 지지대</h3>
+              <p>흙 표면 마르면 충분히 물 주기, 과습 주의.</p>
+              <p>줄기 휘지 않게 지지대 세우기.</p>
+            </li>
+
+            <li>
+              <h3>영양, 병해충, 수확</h3>
+              <p>성장기: 질소 / 열매맺는 시기: 인·칼륨 비료.</p>
+              <p>병충해 예방 위해 통풍 관리, 필요 시 친환경 농약.</p>
+              <p>토마토 붉게 익으면 수확, 완전히 익힌 후 먹기.</p>
+            </li>
+          </ul>
+        </figcaption>
+
+      </figure>
+    </section>
+
+    <!-- 갤러리 -->
+    <section id="galler">
+      <div>
+        <div>
+          <h2>토마토 갤러리</h2>
+          <a href="#" class="moreBtn">전체 보기 ></a>
+        </div>
+
+        <ul>
+          <li class="active">
+            <img src="images/galler_1.png" alt="토마토 사진 1">
+            <div>⤢</div>
+            <div>
+              <h3>지금은 초록, 곧 빨강</h3>
+              <a href="#">구경가기<span>&gt;</span></a>
+            </div>
+          </li>
+
+          <li>
+            <img src="images/galler_2.jpg" alt="토마토 사진 2">
+            <div>⤢</div>
+            <div>
+              <h3>맛이 드러난 순간</h3>
+              <a href="#">구경가기<span>&gt;</span></a>
+            </div>
+          </li>
+
+          <li>
+            <img src="images/galler_3.png" alt="토마토 사진 3">
+            <div>⤢</div>
+
+            <div>
+              <h3>열매가 맺히기 시작한 순간</h3>
+              <a href="#">구경가기<span>&gt;</span></a>
+            </div>
+          </li>
+
+          <li>
+            <img src="images/galler_4.jpg" alt="토마토 사진 4">
+            <div>⤢</div>
+
+            <div>
+              <h3>토마토 절임 완성</h3>
+              <a href="#">구경가기<span>&gt;</span></a>
+            </div>
+          </li>
+
+          <li>
+            <img src="images/galler_5.png" alt="토마토 사진 5">
+            <div>⤢</div>
+
+            <div>
+              <h3>성장의 첫 높이</h3>
+              <a href="#">구경가기<span>&gt;</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section id="quiz">
+      <div class="question">
+        <h2>🍅 토마토 퀴즈</h2>
+        <p>토마토는 과일일까? 채소일까?</p>
+
+        <ul>
+          <li data-answer="wrong">1. 과일</li>
+          <li data-answer="wrong">2. 채소</li>
+          <li data-answer="correct">3. 둘 다 맞다</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="result"></p>
+        <p>
+          토마토는 식물학적으로는 씨가 있는 과일이지만,
+          요리에서는 채소로 사용되기 때문에 둘 다 맞는 표현입니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+
+</body>
+
+</html>

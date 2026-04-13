@@ -1,0 +1,758 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans';
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  background-color: #fff3e0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+/* font-family: 'Gaegu';
+  font-family: 'Jua'; */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#visual,
+#varieties,
+#benefits,
+#recipes,
+#growing,
+#galler {
+  height: calc(100vh - 100px);
+}
+
+#proverb,
+#quiz {
+  height: calc((100vh - 100px) / 2);
+}
+
+@media screen and (min-width:1280px) {
+
+  #visual div,
+  #proverb,
+  #varieties,
+  #benefits>div:last-of-type,
+  #growing div {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 100px 2%;
+    height: 100%;
+  }
+
+
+
+  header {
+    background-color: #fff3e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header>div {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* logo */
+  header>div h1 {
+    max-width: 180px;
+  }
+
+  header>div h1 a {
+    display: block;
+  }
+
+  header>div h1 a img {
+    width: 100%;
+    display: block;
+  }
+
+  /* nav */
+  header>div nav {
+    width: 100%;
+  }
+
+  header>div nav ul {
+    display: flex;
+    gap: 40px;
+    /* float: right; */
+    justify-content: flex-end;
+  }
+
+  header>div nav ul li a {
+    position: relative;
+    /* 가짜 요소(::after)를 기준 잡기 위해 필요 */
+    /* transition: color 0.3s, transform 0.2s; */
+  }
+
+  header>div nav ul li a:hover {
+    color: #e53935;
+  }
+
+  header>div nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    /* 처음에는 밑줄이 안 보임 */
+    height: 2px;
+    background: #e53935;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s;
+    /* 밑줄 길이 늘어나는 애니메이션 */
+  }
+
+  header>div nav ul li a:hover:after {
+    width: 100%;
+  }
+
+  /* search */
+  .searchBox {
+    position: relative;
+    margin-left: 40px;
+  }
+
+  .searchBox input[type="search"] {
+    width: 200px;
+    height: 40px;
+    padding: 0 40px 0 15px;
+    /* 오른쪽 공간 확보 */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+  }
+
+  .searchBox button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url('../images/icon_search.svg') no-repeat center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .searchBox input::placeholder {
+    font-family: 'Noto Sans';
+    font-size: 16px;
+  }
+
+
+
+
+
+  /* 비주얼 */
+  #visual {
+    background-color: #2e7d32;
+    width: 100%;
+  }
+
+  #visual div {
+    background: url(../images/visual.png) center calc(50% + 400px) / cover no-repeat;
+    /* background-size: 1440px; */
+    width: 100%;
+    height: 100%;
+  }
+
+  #visual div h2 {
+
+    font-size: 100px;
+    color: #fff;
+    text-align: center;
+    /* padding: 100px 2%; */
+    font-family: 'Gaegu';
+  }
+
+
+  /* 속담 */
+  #proverb {
+    /* padding: 100px 2%; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* 세로 정렬 */
+    justify-content: center;
+    /* 세로 가운데 */
+    align-items: center;
+    /* 가로 가운데 */
+    text-align: center;
+  }
+
+  #proverb h2,
+  #varieties h2,
+  #benefits h2,
+  #growing div h2 {
+    font-family: 'Gaegu';
+    font-size: 60px;
+    margin-bottom: 80px;
+    text-align: center;
+  }
+
+  /* 종류 */
+  #varieties {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 카드 레이아웃 */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    flex: 1;
+  }
+
+  /* 카드 */
+  .card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); */
+    position: relative;
+    cursor: pointer;
+    /* transition: 0.3s; */
+    text-align: center;
+  }
+
+  /* .card:hover {
+    transform: translateY(-8px);
+  } */
+
+  /* 이미지 */
+  .card img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  .card>h3,
+  .card div h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .card p {
+    margin-bottom: 10px;
+  }
+
+  .card>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 15px;
+    /* padding: 20px; */
+
+    opacity: 0;
+    /* transform: scale(0.9);
+    pointer-events: none; */
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+
+  .card.active div {
+    opacity: 1;
+    /* transform: scale(1);
+    pointer-events: auto; */
+  }
+
+  .card div div {
+    padding: 20px;
+  }
+
+  .close {
+    background: url(../images/icon_close.png) no-repeat center/contain;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* 상세 텍스트 */
+  .card div h3 {
+    color: #e53935;
+    border-bottom: #ccc 1px solid;
+    padding-bottom: 15px;
+  }
+
+
+
+  .card div div:last-of-type {
+    /* margin-top: 10px;
+  padding: 10px; */
+    background-color: #ffe0b2;
+    /* border-radius: 10px; */
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+  }
+
+
+
+
+
+
+  /* 효능*/
+  #benefits {
+    position: relative;
+    overflow: hidden;
+  }
+
+
+
+  /* 라디오 숨기기 */
+  #benefits input[type="radio"] {
+    display: none;
+  }
+
+  #benefits>div {
+    display: flex;
+    height: 100%;
+  }
+
+  /* #benefits>div {
+    background-color: #ccc;
+  } */
+
+  /* 왼쪽 */
+  #benefits>div div:first-of-type {
+    flex: 1;
+  }
+
+  #benefits>div div:first-of-type h2 {
+    text-align: left;
+  }
+
+  #benefits>div div:first-of-type div {
+    display: none;
+  }
+
+  #benefits>div div:first-of-type div img {
+    width:100px;
+    /* margin-bottom: 20px; */
+  }
+
+  #benefits>div div:first-of-type div p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  /* 선택된 콘텐츠 표시 */
+  #t1:checked~div div:first-of-type .c1,
+  #t2:checked~div div:first-of-type .c2,
+  #t3:checked~div div:first-of-type .c3,
+  #t4:checked~div div:first-of-type .c4,
+  #t5:checked~div div:first-of-type .c5,
+  #t6:checked~div div:first-of-type .c6,
+  #t7:checked~div div:first-of-type .c7 {
+    display: flex;
+      align-items: center;
+  gap: 20px;
+
+  }
+
+
+
+
+  /* 오른쪽 */
+  #benefits>div div:last-of-type {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .circle {
+    width: 900px;
+    height: 900px;
+    border: #e53935 2px solid;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -200PX;
+    top: 100px;
+  }
+
+  .circle img {
+    width: 800px;
+    height: 800px;
+  }
+
+
+  /* 텍스트 버튼 */
+  #benefits>div div:last-of-type label {
+    position: absolute;
+    /* 라벨만 절대 위치 */
+    cursor: pointer;
+    font-size: 18px;
+    /* background: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc; */
+  }
+
+  /* 원 중심을 기준으로 오른쪽 위 90도 범위에 배치 */
+  #benefits>div div:last-of-type label[for="t1"] {
+    top: 145px;
+    left: 335px;
+  }
+
+  #benefits>div div:last-of-type label[for="t2"] {
+    top: 215px;
+    left: 260px;
+  }
+
+  #benefits>div div:last-of-type label[for="t3"] {
+    top: 305px;
+    left: 195px;
+  }
+
+  #benefits>div div:last-of-type label[for="t4"] {
+    top: 400px;
+    left: 120px;
+  }
+
+  #benefits>div div:last-of-type label[for="t5"] {
+    top: 500px;
+    left: 110px;
+  }
+
+  #benefits>div div:last-of-type label[for="t6"] {
+    top: 600px;
+    left: 110px;
+  }
+
+  #benefits>div div:last-of-type label[for="t7"] {
+    top: 700px;
+    left: 140px;
+  }
+
+  /* 원형 배치 */
+  /* .circle-menu label[for="t1"] {
+  transform: rotate(90deg) translate(170px) rotate(-90deg);
+}
+.circle-menu label[for="t2"] {
+  transform: rotate(105deg) translate(170px) rotate(-105deg);
+}
+.circle-menu label[for="t3"] {
+  transform: rotate(120deg) translate(170px) rotate(-120deg);
+}
+.circle-menu label[for="t4"] {
+  transform: rotate(135deg) translate(170px) rotate(-135deg);
+}
+.circle-menu label[for="t5"] {
+  transform: rotate(150deg) translate(170px) rotate(-150deg);
+}
+.circle-menu label[for="t6"] {
+  transform: rotate(165deg) translate(170px) rotate(-165deg);
+}
+.circle-menu label[for="t7"] {
+  transform: rotate(180deg) translate(170px) rotate(-180deg);
+} */
+
+  /* 선택된 항목 강조 */
+  #t1:checked~div .circle-menu label[for="t1"],
+  #t2:checked~div .circle-menu label[for="t2"],
+  #t3:checked~div .circle-menu label[for="t3"],
+  #t4:checked~div .circle-menu label[for="t4"],
+  #t5:checked~div .circle-menu label[for="t5"],
+  #t6:checked~div .circle-menu label[for="t6"],
+  #t7:checked~div .circle-menu label[for="t7"] {
+    color: red;
+    font-weight: bold;
+  }
+
+
+/* #benefits > div > div:first-of-type {
+  flex: 1;
+  display: flex;
+  flex-direction: column; 
+  justify-content:space-between; 
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* 키우기 */
+#growing{
+  background: url(../images/growing.jpg) no-repeat center / cover;
+}
+#growing div h2,
+#growing div ul{
+    width: 50%;
+  margin-left: auto;
+  text-align: left;
+  color: #fff;
+}
+
+#growing div ul li h3 {
+			/* font-family: "Dosis";
+			text-transform: uppercase; */
+			font-size: 24px;
+			font-weight: 500;
+			/* box-sizing: border-box;
+			margin: 0;*/
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: relative; 
+			cursor: pointer;
+		}
+
+#growing div ul li:first-of-type h3 {
+			padding: 0 0 30px;
+		}
+
+	#growing div ul li:not(:first-of-type) h3 {
+			padding: 30px 0;
+		}
+
+	#growing div ul li h3:after {
+			content: "";
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background-image: url("../images/icon_plus.png");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			flex-shrink: 0;
+		}
+		#growing div ul li h3.active:after {
+			content: "";
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background-image: url("../images/icon_minus.png");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+/* 기본 상태: p 숨김 */
+#growing ul li p {
+  display: none;
+}
+
+/* h3.active 바로 다음 p를 보이게 */
+#growing ul li h3.active ~ p {
+  display: block;
+}
+
+
+/* #growing div{
+  width: 50%;
+  margin-left: auto;
+  height: 100%;
+}
+#growing ul li{
+  list-style: none;
+  color: #fff;
+} */
+
+
+
+
+/* 갤러리 */
+#galler {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#galler h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4열 */
+  gap: 15px;
+}
+
+/* .gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+} */
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1/1; /* 정사각형 유지 */
+  object-fit: cover; /* 이미지 잘림 없이 꽉 채움 */
+  display: block;
+}
+
+.more-button {
+  margin-top: 20px;
+}
+
+.more-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6347; /* 토마토 느낌 색상 */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.more-button a:hover {
+  background-color: #e5533d;
+}
+
+
+
+
+
+
+  /* 퀴즈 */
+  /* 전체 퀴즈 영역 */
+  #quiz {
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+    /* padding: 50px 20px; */
+    display: flex;
+    flex-direction: column;
+    /* 세로 방향 유지 */
+    justify-content: center;
+    /* 세로 중앙 */
+    align-items: center;
+    /* 가로 중앙 */
+    position: relative;
+  }
+
+  /* 제목 */
+  #quiz .question h2 {
+    margin-bottom: 20px;
+  }
+
+  /* 질문 문장 */
+  #quiz .question p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  /* 보기 리스트 */
+  #quiz .question ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* 보기 간격 */
+  }
+
+  /* 보기 아이템 */
+  #quiz .question ul li {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+  }
+
+  #quiz .question ul li:hover {
+    background: #ffe0e0;
+  }
+
+  #quiz .question ul li.correct {
+    background: #e53935;
+    color: #fff;
+  }
+
+  #quiz .question ul li.wrong {
+    background: #ccc;
+    color: #333;
+  }
+
+  /* 결과 영역: ul 바로 아래, 처음 숨김 */
+  #quiz div:last-of-type {
+    position: absolute;
+    opacity: 0;
+    top: 70%;
+    /*margin-top: 100px;  ul 아래 100px */
+    transition: 0.4s;
+    text-align: center;
+  }
+
+  /* 결과 표시 */
+  #quiz div:last-of-type.show {
+    opacity: 1;
+  }
+
+  /* 결과 텍스트 */
+  #quiz .result {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  /* 설명 텍스트 */
+  #quiz div p:last-child {
+    font-size: 14px;
+    color: #555;
+  }
+}

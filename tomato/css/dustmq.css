@@ -1,0 +1,274 @@
+
+  /* header */
+  .header {
+    position: sticky;
+    top: 0;
+    background: #fff3e0;
+    /* border-bottom: 1px solid #dfdfdf; */
+    z-index: 100;
+    /* padding: 0 2%; */
+  }
+
+  .header div {
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .header h1 a {
+    display: block;
+  }
+
+  .header h1 img {
+    display: block;
+    width: 200px;
+    height: auto;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 50px;
+  }
+
+  nav a {
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: #003d7a;
+  }
+
+  /* util */
+  .header .inner>div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  #searchBox {
+    display: none;
+    width: 180px;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+  }
+
+  #searchBtn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  /* language */
+  .language {
+    position: relative;
+  }
+
+  .language button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .language ul {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+
+  .language ul li {
+    padding: 8px 15px;
+  }
+
+  .language:hover .ul {
+    display: block;
+  }
+
+
+
+
+  /* FOOTER */
+  .footer {
+    background: #003d7a;
+    color: #fff;
+    text-align: center;
+    padding: 70px 20px;
+  }
+
+  .footer img {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+
+  .footer p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .copy {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  #tomatoFriends,
+  #tomatoCharm {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+
+
+
+  #tomatoCharm .left,
+  #tomatoCharm .circle .icon {
+   max-width: 1440px;
+   width: 100%; 
+    margin: 0 auto;
+  }
+
+  /* 토마토의 매력 */
+  #tomatoCharm {
+    display: flex;
+      justify-content: center; /* 전체 영역 중앙 정렬 */
+  flex-wrap: wrap;         /* 화면 작아지면 아래로 내려가도록 */
+  }
+
+  /* 왼쪽 */
+  .left {
+    flex: 1;
+    /* padding: 80px; */
+  }
+
+  /* .left h1 {
+  color: #e53935;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.text {
+  display: none;
+  max-width: 300px;
+  line-height: 1.6;
+  color: #7a5c45;
+} */
+
+  /* 오른쪽 */
+  .right {
+    flex: 1;
+    position: relative;
+    /*display: flex;
+  align-items: center;
+  justify-content: center; */
+  }
+
+  .circle,
+  .circle img {
+    bottom: -200px;
+  }
+
+  /* 원 */
+  .circle {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    border: 3px solid #2E7D32;
+    border-radius: 50%;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin: 0 auto;  부모 가로 중앙 */
+  }
+
+  /* 토마토 이미지 */
+  .circle img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+  }
+
+  /* 아이콘 공통 */
+  .icon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #e53935;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* font-size: 20px;
+    color: white;
+    transition: 0.3s; */
+  }
+  .icon img{
+    width: 70px;
+    height: 70px;
+  }
+  .icon:hover {
+    /* transform: scale(1.1); */
+  }
+
+  /* 위치 */
+  .i1 {
+    top: 20%;
+    left: 50%;
+  }
+
+  .i2 {
+    top: 20%;
+    right: 60%;
+  }
+
+  .i3 {
+    top: 20%;
+    left: 70%;
+  }
+
+  .i4 {
+    top: 20%;
+    left: 80%;
+  }
+
+  .i5 {
+    bottom: 20%;
+    left: 90%;
+  }
+
+  .i6 {
+    bottom: 20%;
+    left: 100%;
+  }
+
+  .i7 {
+    top: 20%;
+    right: 10%;
+  }
+
+  /* 활성 텍스트 */
+  #t1:checked~.left .c1,
+  #t2:checked~.left .c2,
+  #t3:checked~.left .c3,
+  #t4:checked~.left .c4,
+  #t5:checked~.left .c5,
+  #t6:checked~.left .c6,
+  #t7:checked~.left .c7 {
+    display: block;
+  }
+
+  /* 라디오 숨김 */
+  input {
+    display: none;
+  }

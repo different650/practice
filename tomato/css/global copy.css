@@ -1,0 +1,645 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR';
+  color: #222;
+  background-color: #fff3e0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (min-width:1024px) {
+  header {
+    position: sticky;
+    top: 0;
+    background: #fff3e0;
+    z-index: 100;
+  }
+
+  header>div {
+    max-width: 1440px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ⭐ 핵심 */
+    margin: 0 auto;
+  }
+
+  header h1 a {
+    display: block;
+  }
+
+  header h1 img {
+    display: block;
+    width: 200px;
+    height: auto;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-left: auto;
+    /* ⭐ 이거 한 줄이면 오른쪽으로 감 */
+  }
+
+  nav ul {
+    display: flex;
+    gap: 50px;
+  }
+
+  nav a {
+    font-weight: 500;
+    position: relative;
+    /* 가짜 요소(::after)를 기준 잡기 위해 필요 */
+    transition: color 0.3s, transform 0.2s;
+  }
+
+  nav a:hover {
+    color: #e53935;
+    /* transform: translateY(-3px); */
+  }
+
+  /* 밑줄 애니메이션 */
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    /* 처음에는 밑줄이 안 보임 */
+    height: 2px;
+    background: #e53935;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s;
+    /* 밑줄 길이 늘어나는 애니메이션 */
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+
+
+  header>div div:last-of-type {
+    flex: left;
+  }
+
+  .search-box {
+    position: relative;
+  }
+
+  .search-box input[type="search"] {
+    width: 220px;
+    height: 40px;
+    padding: 0 40px 0 15px;
+    /* 오른쪽 공간 확보 */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+  }
+
+  .search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url('../images/icon_search.svg') no-repeat center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  /* 비주얼 */
+  main section:first-of-type {
+    background: #2e7d32 url(../images/visual.png) center calc(50% + 250px) / cover no-repeat;
+    width: 100%;
+    height: calc(100vh - 100px);
+    position: relative;
+  }
+
+
+  main section:first-of-type h2 {
+    font-size: 100px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    /* ⭐ */
+    transform: translateX(-50%);
+    /* ⭐ */
+    max-width: 1440px;
+  }
+
+/* 퀴즈 */
+#quiz {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 40px;
+  background: #fffaf5;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.quiz h2 {
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.options {
+  list-style: none;
+  padding: 0;
+}
+
+.options li {
+  background: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #ddd;
+}
+
+.options li:hover {
+  background: #ffe0e0;
+}
+
+/* 선택 결과 */
+.options li.correct {
+  background: #e53935;
+  color: white;
+}
+
+.options li.wrong {
+  background: #ccc;
+  color: #333;
+}
+
+/* 결과 영역 */
+.result {
+  margin-top: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s;
+}
+
+.result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.result-text {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.explanation {
+  font-size: 14px;
+  color: #555;
+}
+
+
+
+
+
+/* 토마토 친구들 */
+#tomatoFriends {
+  padding: 100px 20px;
+  background: #fffaf5;
+  text-align: center;
+}
+
+#tomatoFriends h1 {
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+/* 카드 레이아웃 */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 카드 */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* 이미지 */
+.card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.card.active .overlay {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+
+/* 상세 텍스트 */
+.detail h3 {
+  margin-bottom: 10px;
+  color: #e53935;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+}
+
+
+
+
+
+@media screen and (min-width:1024px) {
+
+  /* 1320잡기 */
+  .visual div,
+  .brandMessage div{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 2%;
+  }
+
+
+  /* 비주얼 */
+  .visual {
+    background: #435f8d url(../images/main04.jpg) center calc(50% + 180px) / cover no-repeat;
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: relative;
+  }
+
+  .visual div {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1320px;
+
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .visual div h2 {
+    font-size: 60px;
+    line-height: 72px;
+    margin-bottom: 40px;
+  }
+
+  .visual div p {
+    font-size: 30px;
+  }
+
+
+
+
+
+
+  /* 브랜드 메시지 */
+  .brandMessage {
+
+    height: calc(100vh - 80px);
+    text-align: center;
+
+      display: flex;              /* 추가 */
+  justify-content: center;    /* 가로 중앙 */
+  align-items: center;        /* 세로 중앙 */
+  }
+
+  .brandMessage div{
+    width: 100%;
+  }
+  .brandMessage div h3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 50px;
+    font-weight: 900;
+    color: #003d7a;
+    margin-bottom: 60px;
+  }
+
+  .brandMessage div h3 span:first-of-type {
+    padding-bottom: 40px;
+  }
+
+  .brandMessage div h3 span:nth-last-child(2) {
+    flex: 1;
+    min-width: 50px;
+    height: 10px;
+    background: #003d7a;
+  }
+
+  .brandMessage div h3 span:last-of-type {
+    padding-top: 40px;
+  }
+
+  .brandMessage div p {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #555;
+    margin-bottom: 35px;
+  }
+
+  .brandMessage div img {
+    display: block;
+    width: 100%;
+    /* 화면 폭에 맞춤 */
+    height: auto;
+    /* 높이는 비율대로 줄어듦 */
+    object-fit: cover;
+    /* 영역 꽉 채움 */
+    margin-top: 20px;
+    max-height: 440px;
+    /* PC에서는 최대 높이 */
+  }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+  display: inline-block;
+  /* margin-top: 20px; */
+  padding: 12px 24px;
+  background: #003d7a;
+  color: #fff;
+}
+
+
+
+
+
+/* 메뉴 */
+.menu-section {
+  padding: 100px 2%;
+  text-align: center;
+  color: #666;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+/* .menu-section h4 {
+    font-size: 26px;
+    font-family: 400;
+  } */
+
+.menu-section .sub {
+  margin: 10px 0 40px;
+
+
+}
+
+.menu-section .sub strong {
+  color: #003d7a;
+  font-family: 700;
+}
+
+
+
+.menu-cards {
+  max-width: 1320px;
+  margin: 0 auto;
+
+  display: flex;
+  /* justify-content: center; */
+  gap: 30px;
+  /* box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); */
+
+
+}
+
+.menu-card {
+
+  /* flex: 1fr; */
+  /* width: 280px; */
+  background: #fff;
+  /* border-radius: 10px; */
+  padding-bottom: 20px;
+
+  transition: 0.3s;
+}
+
+.menu-card img {
+  width: 100%;
+  /* border-radius: 10px 10px 0 0; */
+}
+
+.menu-card p {
+  margin-top: 15px;
+  color: #888;
+}
+
+.menu-card h3 {
+  margin: 10px 0;
+}
+
+.menu-card span {
+  font-size: 14px;
+  color: #555;
+
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+}
+
+.menu-card a {
+  display: block;
+  margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+/* 배너 */
+  .bannder {
+    background: #f2c148;
+    width: 100%;
+    height: 620px;
+    position: relative;
+    height: calc(100vh / 2);
+    /* 🔥 핵심 */
+    /* display: flex;
+    align-items: center; */
+  }
+
+  .bannder::after {
+    content: "";
+    position: absolute;
+    /* right: 50%; */
+    top: 0;
+    width: 45%;
+    /* 50%는 그냥 “오른쪽 절반만 이미지 쓰겠다”는 의미 */
+    height: 100%;
+    /* 🔥 620px → 100% */
+    /* padding-left: 100px; */
+    background: url('../images/banner01.png') right center/cover no-repeat;
+  }
+
+  .bannder>div {
+    position: absolute;
+    left: 46%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    padding: 0 2%;
+  }
+
+  .bannder div span {
+    display: inline-block;
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .bannder div h2 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #6c2f1a;
+    margin: 25px 0 15px;
+      display: flex;
+  flex-wrap: wrap; /* 줄 바꿈 가능 */
+  gap: 10px;       /* 요소 간 간격 */
+  }
+
+
+  .bannder div>p {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+     display: inline-block;
+  margin: 0 10px 10px 0; 
+  }
+
+
+
+
+
+
+
+/* 매장 */
+.store {
+  margin-top: 100px;
+}
+
+.store-wrap {
+  display: flex;
+}
+
+.store-img {
+  width: 50%;
+  height: 300px;
+  background: url('../images/interior.png') center/cover no-repeat;
+}
+
+.store-text {
+  width: 50%;
+  padding: 40px;
+  background: #f8f8f8;
+}
+
+.store-text h2 {
+  font-size: 24px;
+}
+
+.store-text p {
+  margin: 10px 0 20px;
+}
+
+.store-search {
+  display: flex;
+}
+
+.store-search input {
+  flex: 1;
+  padding: 10px;
+}
+
+.store-search button {
+  padding: 10px 20px;
+  background: #003d7a;
+  color: #fff;
+  border: none;
+}
