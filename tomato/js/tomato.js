@@ -45,8 +45,8 @@ function initQuiz() {
     // 정답 항상 표시
     $('#quiz ul li[data-answer="correct"]').addClass('correct');
 
-    // 결과 영역 표시 (이제 margin-top 100px로 아래에)
-    $('#quiz > div').addClass('show');
+    // ✅ 여기 수정
+    $('#quiz div:last-of-type').addClass('show');
   });
 }
 

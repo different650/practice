@@ -57,7 +57,7 @@ a {
   #growing div {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 100px 2%;
+    padding: 80px 2%;
     height: 100%;
   }
 
@@ -189,14 +189,14 @@ a {
     font-size: 100px;
     color: #fff;
     text-align: center;
-    /* padding: 100px 2%; */
+    /* padding: 80px 2%; */
     font-family: 'Gaegu';
   }
 
 
   /* 속담 */
   #proverb {
-    /* padding: 100px 2%; */
+    /* padding: 80px 2%; */
     text-align: center;
     display: flex;
     flex-direction: column;
