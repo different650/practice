@@ -414,6 +414,7 @@ a {
     transition: 0.3s ease;
     padding: 20px;
 
+      pointer-events: none; /* 클릭 막기 */
   }
 
   nav.active {
