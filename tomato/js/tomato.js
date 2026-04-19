@@ -3,8 +3,10 @@ $(function () {
   initQuiz();
   accControl("#growing li h3");
   initGallery();
-});
 
+  initHamburger();
+});
+// 카드 기능
 function initCards() {
 
   $('.card').on('click', function (e) {
@@ -20,12 +22,9 @@ function initCards() {
     e.stopPropagation();
     $(this).closest('.card').removeClass('active');
   });
-
 }
 
-
-
-
+// 퀴즈 기능
 function initQuiz() {
   $('#quiz ul li').on('click', function () {
     const $this = $(this);
@@ -50,32 +49,41 @@ function initQuiz() {
   });
 }
 
-
+// 아코디언 기능
 function accControl(target) {
   $(target).click(function () {
     $(this).toggleClass("active");
   });
-
-
-
-
-
-
 }
 
-  function initGallery() {
-    const $items = $('#galler li');
+// 갤러리 기능
+function initGallery() {
+  const $items = $('#galler li');
 
-    $items.on('click', function () {
-      const $item = $(this);
+  $items.on('click', function () {
+    const $item = $(this);
 
-      // 이미 active면 유지 (원하면 토글도 가능)
-      if ($item.hasClass('active')) return;
+    // 이미 active면 유지 (원하면 토글도 가능)
+    if ($item.hasClass('active')) return;
 
-      // 전체 active 제거
-      $items.removeClass('active');
+    // 전체 active 제거
+    $items.removeClass('active');
 
-      // 클릭한 것만 active
-      $item.addClass('active');
-    });
-  }
+    // 클릭한 것만 active
+    $item.addClass('active');
+  });
+}
+
+// 햄버거 메뉴
+function initHamburger() { 
+
+  $('.hamburger').on('click', function () {
+    $('nav').toggleClass('active');
+  });
+
+  // 메뉴 클릭 시 닫기
+  $('nav ul li a').on('click', function () {
+    $('nav').removeClass('active');
+  });
+
+}

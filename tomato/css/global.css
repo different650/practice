@@ -11,8 +11,6 @@ body {
 }
 
 main {
-  margin-top: 100px;
-  height: calc(100vh - 100px);
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 
@@ -39,22 +37,10 @@ a {
   color: inherit;
 }
 
-#visual,
-#varieties,
-#benefits,
-#recipes,
-#growing,
-#galler {
-  height: calc(100vh - 100px);
-}
-
-#proverb,
-#quiz {
-  height: calc((100vh - 100px) / 2);
-}
 
 
 @media screen and (min-width:1280px) {
+
   body {
     font-size: 20px;
   }
@@ -62,6 +48,20 @@ a {
   main {
     margin-top: 100px;
     height: calc(100vh - 100px);
+  }
+
+  #visual,
+  #varieties,
+  #benefits,
+  #recipes,
+  #growing,
+  #galler {
+    height: calc(100vh - 100px);
+  }
+
+  #proverb,
+  #quiz {
+    height: calc((100vh - 100px) / 2);
   }
 
   h2 {
@@ -82,8 +82,8 @@ a {
   header {
     position: fixed;
     top: 0;
-    height: 100px;
     width: 100%;
+    height: 100px;
     background-color: #fff3e0;
     z-index: 100;
     align-items: center;
@@ -115,13 +115,13 @@ a {
 
   /* nav */
   header>div nav {
-    width: 100%;
+    flex: 1;
   }
 
   header>div nav ul {
     display: flex;
     gap: 40px;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   header>div nav ul li a {
@@ -152,7 +152,7 @@ a {
   /* search */
   .searchBox {
     position: relative;
-    margin-left: 40px;
+    /* margin-left: 20px; */
   }
 
   .searchBox input[type="search"] {
@@ -182,6 +182,10 @@ a {
   .searchBox input::placeholder {
     font-family: 'Jua';
     font-size: 16px;
+  }
+
+  .hamburger {
+    display: none;
   }
 
   /* footer */
@@ -243,6 +247,20 @@ a {
     height: calc(100vh - 80px);
   }
 
+  #visual,
+  #varieties,
+  #benefits,
+  #recipes,
+  #growing,
+  #galler {
+    height: calc(100vh - 80px);
+  }
+
+  #proverb,
+  #quiz {
+    height: calc((100vh - 80px) / 2);
+  }
+
   h2 {
     font-size: 46px;
     margin-bottom: 40px;
@@ -261,26 +279,23 @@ a {
   header {
     position: fixed;
     top: 0;
-    height: 80px;
     width: 100%;
-    background-color: #fff3e0;
+    height: 80px;
+    background: #fff3e0;
+    border-bottom: 2px solid #e53935;
     z-index: 100;
-    align-items: center;
-    border-bottom: #e53935 2px solid;
   }
 
   header>div {
-    max-width: 1440px;
-    margin: 0 auto;
+    height: 100%;
     padding: 15px 2%;
     display: flex;
     align-items: center;
-    height: 100%;
   }
 
   /* logo */
   header>div h1 {
-    max-width: 150px;
+    order: 1;
   }
 
   header>div h1 a {
@@ -293,7 +308,7 @@ a {
   }
 
   /* nav */
-  header>div nav {
+  /* header>div nav {
     width: 100%;
   }
 
@@ -315,23 +330,22 @@ a {
     content: '';
     position: absolute;
     width: 0%;
-    /* 처음에는 밑줄이 안 보임 */
     height: 2px;
     background: #e53935;
     left: 0;
     bottom: -4px;
     transition: width 0.3s;
-    /* 밑줄 길이 늘어나는 애니메이션 */
   }
 
   header>div nav ul li a:hover:after {
     width: 100%;
-  }
+  } */
 
   /* search */
   .searchBox {
+    order: 2;
+    margin-left: auto;
     position: relative;
-    margin-left: 40px;
   }
 
   .searchBox input[type="search"] {
@@ -361,6 +375,68 @@ a {
   .searchBox input::placeholder {
     font-family: 'Jua';
     font-size: 16px;
+  }
+
+  /* =========================
+     햄버거
+  ========================= */
+  .hamburger {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    margin-left: 12px;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 22px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* =========================
+     nav (슬라이드 메뉴)
+  ========================= */
+  nav {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 260px;
+    height: calc(100vh - 80px);
+    background: #fff3e0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+
+    transform: translateX(100%);
+    transition: 0.3s ease;
+    padding: 20px;
+
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+
+  /* 메뉴 리스트 */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 8px 0;
+    color: #333;
+  }
+
+  nav ul li a:hover {
+    color: #e53935;
   }
 
   /* footer */
