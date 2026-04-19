@@ -419,6 +419,7 @@ a {
 
   nav.active {
     transform: translateX(0);
+  pointer-events: auto; /* 열렸을 때만 클릭 가능 */
   }
 
   /* 메뉴 리스트 */
