@@ -5,6 +5,7 @@ $(function () {
   initGallery();
 
   initHamburger();
+  initSearch();
 });
 // 카드 기능
 function initCards() {
@@ -75,10 +76,13 @@ function initGallery() {
 }
 
 // 햄버거 메뉴
-function initHamburger() { 
+function initHamburger() {
 
   $('.hamburger').on('click', function () {
     $('nav').toggleClass('active');
+
+    // 🔥 햄버거 열면 검색 닫기
+    $('.searchBox').removeClass('active');
   });
 
   // 메뉴 클릭 시 닫기
@@ -86,4 +90,29 @@ function initHamburger() {
     $('nav').removeClass('active');
   });
 
+}
+
+
+function initSearch() {
+  const $searchBox = $('.searchBox');
+  const $searchBtn = $searchBox.find('button');
+
+  $searchBtn.on('click', function (e) {
+    e.stopPropagation();
+
+    $searchBox.toggleClass('active');
+
+    // 🔥 검색 열면 햄버거 닫기
+    $('nav').removeClass('active');
+  });
+
+  // 바깥 클릭 시 닫기
+  $(document).on('click', function () {
+    $searchBox.removeClass('active');
+  });
+
+  // input 클릭 시 닫힘 방지
+  $searchBox.find('input').on('click', function (e) {
+    e.stopPropagation();
+  });
 }

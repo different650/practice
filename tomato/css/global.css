@@ -4,10 +4,12 @@
 
 body {
   font-family: "Jua", sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
   color: #222;
   background-color: #fff3e0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 main {
@@ -40,9 +42,8 @@ a {
 
 
 @media screen and (min-width:1280px) {
-
   body {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   main {
@@ -64,15 +65,9 @@ a {
     height: calc((100vh - 100px) / 2);
   }
 
-  h2 {
-    font-size: 60px;
-    margin-bottom: 50px;
-    font-weight: 500;
-  }
-
   .moreBtn {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 100;
   }
 
   .moreBtn:hover {
@@ -91,19 +86,15 @@ a {
   }
 
   header>div {
+    height: 100%;
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px 2%;
     display: flex;
     align-items: center;
-    height: 100%;
   }
 
   /* logo */
-  header>div h1 {
-    max-width: 150px;
-  }
-
   header>div h1 a {
     display: block;
   }
@@ -152,16 +143,14 @@ a {
   /* search */
   .searchBox {
     position: relative;
-    /* margin-left: 20px; */
   }
 
   .searchBox input[type="search"] {
     width: 200px;
     height: 40px;
     padding: 0 40px 0 15px;
-    /* 오른쪽 공간 확보 */
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 15px;
     outline: none;
   }
 
@@ -184,9 +173,12 @@ a {
     font-size: 16px;
   }
 
+  /* 햄버거 */
   .hamburger {
     display: none;
   }
+
+
 
   /* footer */
   .footer {
@@ -239,7 +231,7 @@ a {
 
 @media screen and (min-width:768px) and (max-width:1279px) {
   body {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   main {
@@ -261,15 +253,9 @@ a {
     height: calc((100vh - 80px) / 2);
   }
 
-  h2 {
-    font-size: 46px;
-    margin-bottom: 40px;
-    font-weight: 500;
-  }
-
   .moreBtn {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 100;
   }
 
   .moreBtn:hover {
@@ -288,7 +274,7 @@ a {
 
   header>div {
     height: 100%;
-    padding: 15px 2%;
+    padding: 15px 3%;
     display: flex;
     align-items: center;
   }
@@ -307,40 +293,6 @@ a {
     display: block;
   }
 
-  /* nav */
-  /* header>div nav {
-    width: 100%;
-  }
-
-  header>div nav ul {
-    display: flex;
-    gap: 40px;
-    justify-content: flex-end;
-  }
-
-  header>div nav ul li a {
-    position: relative;
-  }
-
-  header>div nav ul li a:hover {
-    color: #e53935;
-  }
-
-  header>div nav ul li a:after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: #e53935;
-    left: 0;
-    bottom: -4px;
-    transition: width 0.3s;
-  }
-
-  header>div nav ul li a:hover:after {
-    width: 100%;
-  } */
-
   /* search */
   .searchBox {
     order: 2;
@@ -352,9 +304,8 @@ a {
     width: 200px;
     height: 40px;
     padding: 0 40px 0 15px;
-    /* 오른쪽 공간 확보 */
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 15px;
     outline: none;
   }
 
@@ -377,9 +328,7 @@ a {
     font-size: 16px;
   }
 
-  /* =========================
-     햄버거
-  ========================= */
+  /* 햄버거 */
   .hamburger {
     order: 3;
     display: flex;
@@ -398,48 +347,48 @@ a {
     transition: 0.3s;
   }
 
-  /* =========================
-     nav (슬라이드 메뉴)
-  ========================= */
+  /* nav */
   nav {
     position: fixed;
     top: 80px;
     right: 0;
-    width: 260px;
+    width: calc(100% / 3);
     height: calc(100vh - 80px);
     background: #fff3e0;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-
     transform: translateX(100%);
     transition: 0.3s ease;
     padding: 20px;
-
-      pointer-events: none; /* 클릭 막기 */
+    pointer-events: none;
+    /* 클릭 막기 */
   }
 
   nav.active {
     transform: translateX(0);
-  pointer-events: auto; /* 열렸을 때만 클릭 가능 */
+    pointer-events: auto;
+    /* 열렸을 때만 클릭 가능 */
   }
 
   /* 메뉴 리스트 */
   nav ul {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
   }
 
   nav ul li a {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     display: block;
-    padding: 8px 0;
+    padding: 10px 0;
     color: #333;
   }
 
   nav ul li a:hover {
     color: #e53935;
   }
+
+
 
   /* footer */
   .footer {
@@ -492,23 +441,31 @@ a {
 
 @media screen and (min-width:280px) and (max-width:767px) {
   body {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   main {
-    margin-top: 100px;
-    height: calc(100vh - 100px);
+    margin-top: 60px;
+    height: calc(100vh - 60px);
   }
 
-  h2 {
-    font-size: 60px;
-    margin-bottom: 50px;
-    font-weight: 500;
+  #visual,
+  #varieties,
+  #benefits,
+  #recipes,
+  #growing,
+  #galler {
+    height: calc(100vh - 60px);
+  }
+
+  #proverb,
+  #quiz {
+    height: calc((100vh - 60px) / 2);
   }
 
   .moreBtn {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 100;
   }
 
   .moreBtn:hover {
@@ -518,26 +475,23 @@ a {
   header {
     position: fixed;
     top: 0;
-    height: 100px;
     width: 100%;
+    height: 60px;
     background-color: #fff3e0;
     z-index: 100;
-    align-items: center;
     border-bottom: #e53935 2px solid;
   }
 
   header>div {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 2%;
+    height: 100%;
+    padding: 10px 5%;
     display: flex;
     align-items: center;
-    height: 100%;
   }
 
   /* logo */
   header>div h1 {
-    max-width: 150px;
+    order: 1;
   }
 
   header>div h1 a {
@@ -545,69 +499,49 @@ a {
   }
 
   header>div h1 a img {
-    width: 100%;
+    height: 40px;
     display: block;
-  }
-
-  /* nav */
-  header>div nav {
-    width: 100%;
-  }
-
-  header>div nav ul {
-    display: flex;
-    gap: 40px;
-    justify-content: flex-end;
-  }
-
-  header>div nav ul li a {
-    position: relative;
-  }
-
-  header>div nav ul li a:hover {
-    color: #e53935;
-  }
-
-  header>div nav ul li a:after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    /* 처음에는 밑줄이 안 보임 */
-    height: 2px;
-    background: #e53935;
-    left: 0;
-    bottom: -4px;
-    transition: width 0.3s;
-    /* 밑줄 길이 늘어나는 애니메이션 */
-  }
-
-  header>div nav ul li a:hover:after {
-    width: 100%;
   }
 
   /* search */
   .searchBox {
-    position: relative;
-    margin-left: 40px;
+    order: 2;
+    margin-left: auto;
+    position: static;
   }
 
+  /* 🔥 기본: 완전히 숨김 */
   .searchBox input[type="search"] {
-    width: 200px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
     height: 40px;
-    padding: 0 40px 0 15px;
-    /* 오른쪽 공간 확보 */
-    border: 1px solid #ccc;
-    border-radius: 20px;
+    padding: 0 5%;
+    border: none;
     outline: none;
+    background: #fff3e0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 999;
   }
 
+  /* 🔥 active일 때만 보임 */
+  .searchBox.active input[type="search"] {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* 버튼 (아이콘만) */
   .searchBox button {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
+    position: static;
+    transform: none;
+    width: 18px;
+    height: 18px;
     background: url('../images/icon_search.svg') no-repeat center;
     background-size: contain;
     border: none;
@@ -619,6 +553,68 @@ a {
     font-family: 'Jua';
     font-size: 16px;
   }
+
+  /* 햄버거 */
+  .hamburger {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 20px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* nav */
+  nav {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: calc(100% / 2);
+    height: calc(100vh - 60px);
+    background: #fff3e0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: 0.3s ease;
+    padding: 15px;
+    pointer-events: none;
+    /* 클릭 막기 */
+  }
+
+  nav.active {
+    transform: translateX(0);
+    pointer-events: auto;
+    /* 열렸을 때만 클릭 가능 */
+  }
+
+  /* 메뉴 리스트 */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 5px 0;
+    color: #333;
+  }
+
+  nav ul li a:hover {
+    color: #e53935;
+  }
+
+
 
   /* footer */
   .footer {
