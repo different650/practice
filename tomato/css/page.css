@@ -370,7 +370,7 @@
     font-size: 16px;
     line-height: 20px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .recipeCard figcaption div span {
@@ -380,6 +380,7 @@
     padding: 10px 18px;
     background-color: #2e7d32;
     border-radius: 15px;
+    display: inline-block;
   }
 
   /* 키우기 */
@@ -546,8 +547,8 @@
 
   #galler li>div:first-of-type {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 30px;
+    right: 30px;
 
     width: 30px;
     height: 30px;
@@ -574,7 +575,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 25px;
+    padding: 30px;
     color: #fff;
     transform: translateY(100%);
     transition: 0.4s ease;
@@ -1025,11 +1026,11 @@
     margin-bottom: 35px;
   }
 
-
   #recipes>div>div:last-of-type {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* 🔥 핵심 */
     gap: 20px;
   }
 
@@ -1039,6 +1040,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-width: 0;
   }
 
   .recipeCard img {
@@ -1050,6 +1052,10 @@
     object-position: center;
     border-radius: 15px;
     margin-bottom: 15px;
+  }
+
+  .recipeCard figcaption {
+    min-width: 0;
   }
 
   .recipeCard figcaption h3 {
@@ -1064,13 +1070,18 @@
   .recipeCard figcaption p {
     line-height: 20px;
     margin-bottom: 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
   }
 
   .recipeCard figcaption>span {
     font-size: 14px;
     line-height: 18px;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .recipeCard figcaption div span {
@@ -1080,6 +1091,7 @@
     padding: 9px 16px;
     background-color: #2e7d32;
     border-radius: 15px;
+    display: inline-block;
   }
 
   /* 키우기 */
@@ -1093,9 +1105,14 @@
   }
 
   /* ⭐ 핵심: 좌우 1:1 */
-  #growing figure>div,
-  #growing figure figcaption {
+  #growing figure>div {
     flex: 1;
+    min-width: 0;
+    height: 100%;
+  }
+
+  #growing figure figcaption {
+    flex: 2;
     min-width: 0;
     height: 100%;
   }
@@ -1235,6 +1252,10 @@
   /* active 카드 확장 */
   #galler li.active {
     flex: 3;
+  }
+
+  #galler li:last-of-type {
+    display: none;
   }
 
   #galler li img {
@@ -1728,15 +1749,22 @@
   }
 
   #recipes>div>div:last-of-type {
-    flex: 1;
-    display: flex;
+    /* flex: 1;
+    display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* grid-template-rows: (2, 1fr);
+    gap: 20px; */
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  #recipes>div>div:last-of-type a {
-    /* height: 50%; */
-    height: auto;
+  #recipes>div>div:last-of-type>a {
+    min-width: 0;
   }
 
   #recipes>div>div:last-of-type a:last-of-type {
@@ -1749,10 +1777,11 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-width: 0;
   }
 
   .recipeCard img {
-    /* flex: 1; */
+    flex: 1;
     min-height: 0;
     width: 100%;
     aspect-ratio: 4 / 1;
@@ -1761,6 +1790,11 @@
     border-radius: 15px;
     margin-bottom: 10px;
   }
+
+  .recipeCard figcaption {
+    min-width: 0;
+  }
+
 
   .recipeCard figcaption h3 {
     font-size: 18px;
@@ -1774,13 +1808,17 @@
   .recipeCard figcaption p {
     line-height: 18px;
     margin-bottom: 5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .recipeCard figcaption>span {
     font-size: 12px;
     line-height: 16px;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   .recipeCard figcaption div span {
@@ -1790,6 +1828,7 @@
     padding: 8px 14px;
     background-color: #2e7d32;
     border-radius: 15px;
+    display: inline-block;
   }
 
   /* .recipeCard figcaption div span {
@@ -1805,14 +1844,24 @@
     height: 100%;
     margin: 0 auto;
     padding: 40px 4%;
-    display: flex;
-    gap: 10px;
+    /* display: flex;
+    gap: 10px; */
+    position: relative;
   }
 
   /* ⭐ 핵심: 좌우 1:1 */
-  #growing figure>div,
+  #growing figure>div {
+    /* flex: 1; */
+    /* min-width: 0; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 88px;
+    left: 4%;
+  }
+
   #growing figure figcaption {
-    flex: 1;
+    flex: 2;
     min-width: 0;
     height: 100%;
   }
@@ -1824,26 +1873,28 @@
 
   /* 이미지 */
   #growing figure img {
-    width: 100%;
-    height: 100%;
+    width: 92%;
+    height: 100px;
 
     object-fit: cover;
     display: block;
-    object-position: calc(50% + 130px) center;
+    object-position: calc(50%) center;
     border-radius: 15px;
+    position: absolute;
   }
 
   /* 텍스트 */
   #growing figure figcaption {
     display: flex;
     flex-direction: column;
-    /* gap: 20px;*/
+    gap: 110px;
   }
 
   #growing figure figcaption h2 {
     font-size: 28px;
     font-weight: 100;
     margin-bottom: 20px;
+    text-align: center;
   }
 
   #growing figcaption ul {
@@ -1865,11 +1916,12 @@
     cursor: pointer;
   }
 
+  /* 
   #growing figcaption ul li:first-of-type h3 {
     padding: 0 0 10px;
-  }
+  } */
 
-  #growing figcaption ul li:not(:first-of-type) h3 {
+  #growing figcaption ul li h3 {
     padding: 10px 0;
   }
 
@@ -1953,6 +2005,11 @@
     flex: 3;
   }
 
+  #galler li:nth-of-type(4),
+  #galler li:last-of-type {
+    display: none;
+  }
+
   #galler li img {
     width: 100%;
     height: 100%;
@@ -1990,7 +2047,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 25px;
+    padding: 10px;
     color: #fff;
     transform: translateY(100%);
     transition: 0.4s ease;
