@@ -903,6 +903,7 @@
   /* 콘텐츠 영역 */
   #benefits>div div:first-of-type div {
     display: none;
+    width: 50%;
   }
 
   #benefits>div div:first-of-type div img {
@@ -948,6 +949,21 @@
     position: relative;
   }
 
+  /* .circle::before {
+  content: "";
+  width: 800px;
+  height: 800px;
+  border: 2px solid #e53935;
+  border-radius: 50%;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  z-index: 10;
+} */
+
   .circle img {
     width: 600px;
     height: 600px;
@@ -964,37 +980,37 @@
 
   #benefits>div div:last-of-type label[for="t1"] {
     top: 110px;
-    left: calc(57% + 0px);
+    left: calc(50% + 90px);
   }
 
   #benefits>div div:last-of-type label[for="t2"] {
     top: 155px;
-    left: calc(57% + 10px);
+    left: calc(50% + 35px);
   }
 
   #benefits>div div:last-of-type label[for="t3"] {
     top: 215px;
-    left: calc(57% + 10px);
+    left: calc(50% - 25px);
   }
 
   #benefits>div div:last-of-type label[for="t4"] {
     top: 280px;
-    left: calc(57% + 10px);
+    left: calc(50% - 90px);
   }
 
   #benefits>div div:last-of-type label[for="t5"] {
     top: 350px;
-    left: calc(57% + 10px);
+    left: calc(50% - 110px);
   }
 
   #benefits>div div:last-of-type label[for="t6"] {
     top: 435px;
-    left: calc(57% + 10px);
+    left: calc(50% - 120px);
   }
 
   #benefits>div div:last-of-type label[for="t7"] {
     top: 520px;
-    left: calc(57% + 10px);
+    left: calc(50% - 110px);
   }
 
   /* 선택된 항목 강조 */
