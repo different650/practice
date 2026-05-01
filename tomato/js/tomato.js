@@ -59,7 +59,7 @@ function accControl(target) {
 
 // 갤러리 기능
 function initGallery() {
-  const $items = $('#galler li');
+  const $items = $('#gallery li');
 
   $items.on('click', function () {
     const $item = $(this);
