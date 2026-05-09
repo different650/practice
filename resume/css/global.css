@@ -7,14 +7,17 @@
 
 body {
 	background-color: #fff3e5;
-	/* 배경색 */
+	width: 100vw;
+	min-height: 100vh;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+	overflow: hidden;
+	/* 브라우저 전체 스크롤 막기 */
 }
 
 a {
 	text-decoration: none;
-	/* 링크 밑줄 제거 */
 	color: #000;
-	/* 기본 글자색 */
 }
 
 ul {
@@ -37,11 +40,16 @@ ul {
 
 	main {
 		width: 870px;
-		/* 메인 넓이 */
 		padding: 60px;
+		height: 100vh;
+
+		display: flex;
+		flex-direction: column;
 	}
 
 	main div {
+		flex-shrink: 0;
+		/* 스크롤이 생길 때 flex는 자동으로 크기를 줄이려 하는데, 이걸 막는 역할 */
 		height: 270px;
 		/* 소개 영역 높이 */
 	}
@@ -74,6 +82,13 @@ ul {
 	main div p {
 		font-size: 16px;
 		/* 소개 글 */
+	}
+
+	main section {
+	flex: 1;
+	overflow-y: auto;
+	min-height: 0;
+	/* flex 안에서 스크롤 가능하게 허용 */
 	}
 
 	/* 아코디언 리스트 간격 */
@@ -221,8 +236,8 @@ ul {
 		height: 40px;
 		font-size: 16px;
 		font-weight: 700;
-		/* padding: 10px 16px; */
-		line-height: 40px;
+		padding: 10px 0px;
+		/* line-height: 40px; */
 		border-radius: 10px;
 		border: 2px solid #000;
 		background-color: #fff;
