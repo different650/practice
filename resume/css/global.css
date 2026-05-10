@@ -1,18 +1,11 @@
 * {
 	box-sizing: border-box;
-	/* 패딩과 보더를 포함한 박스 사이즈 */
-	font-family: "Noto Sans KR";
-	/* 전체 폰트 설정 */
 }
 
 body {
+	font-family: "Noto Sans KR";
 	background-color: #fff3e5;
 	width: 100vw;
-	min-height: 100vh;
-	word-break: keep-all;
-	overflow-wrap: break-word;
-	overflow: hidden;
-	/* 브라우저 전체 스크롤 막기 */
 }
 
 a {
@@ -22,27 +15,29 @@ a {
 
 ul {
 	list-style: none;
-	/* ul 기본 점 제거 */
 }
 
 /* 데스크탑 레이아웃 */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
+	body {
+		min-height: 100vh;
+		word-break: keep-all;
+		overflow-wrap: break-word;
+		overflow: hidden;
+		/* 브라우저 전체 스크롤 막기 */
+	}
 
 	.wrap {
 		display: flex;
-		/* main + aside 가로 배치 */
-		/* justify-content: center; */
 		max-width: 1920px;
 		margin: 0px auto;
 		min-height: 100vh;
-		/* 화면 높이만큼 */
 	}
 
 	main {
 		width: 870px;
 		padding: 60px;
 		height: 100vh;
-
 		display: flex;
 		flex-direction: column;
 	}
@@ -51,7 +46,6 @@ ul {
 		flex-shrink: 0;
 		/* 스크롤이 생길 때 flex는 자동으로 크기를 줄이려 하는데, 이걸 막는 역할 */
 		height: 270px;
-		/* 소개 영역 높이 */
 	}
 
 	main div h1 {
@@ -81,14 +75,13 @@ ul {
 
 	main div p {
 		font-size: 16px;
-		/* 소개 글 */
 	}
 
 	main section {
-	flex: 1;
-	overflow-y: auto;
-	min-height: 0;
-	/* flex 안에서 스크롤 가능하게 허용 */
+		flex: 1;
+		overflow-y: auto;
+		min-height: 0;
+		/* flex 안에서 스크롤 가능하게 허용 */
 	}
 
 	/* 아코디언 리스트 간격 */
@@ -127,20 +120,17 @@ ul {
 	/* 아코디언 내용 테이블 */
 	.accComponent li table {
 		display: none;
-		/* 기본 숨김 */
 		width: 100%;
 		font-size: 16px;
 		padding: 10px;
 	}
 
-	/* 테이블 행 높이 */
 	.accComponent li table tr {
 		height: 50px;
 		line-height: 30px;
 	}
 
 	table {
-		/* border-collapse: collapse; */
 		width: 100%;
 	}
 
@@ -160,7 +150,6 @@ ul {
 		width: 290px;
 	}
 
-	/* 테이블 밑줄 */
 	tr {
 		position: relative;
 	}
@@ -177,18 +166,29 @@ ul {
 	/* 더보기 버튼 */
 	.accComponent li button {
 		display: none;
-		/* 처음엔 숨김 */
-		margin: 10px auto 0;
-		/* 위쪽 여백 10px, 가로 가운데 정렬 */
-		padding: 8px 16px;
+		padding: 10px 16px;
 		font-size: 16px;
 		cursor: pointer;
 		background-color: transparent;
-		/* 배경 없애기 */
 		border: none;
-		/* 테두리 없애기 */
-		color: #222;
-		/* 글자색은 필요하면 변경 */
+	}
+
+	.accComponent li:last-of-type table td {
+		display: block;
+		width: 100%;
+		padding: 0px 25px;
+	}
+
+	.accComponent li:last-of-type table td:first-of-type {
+		padding: 10px 25px 0px;
+	}
+
+	.accComponent li:last-of-type table td:last-of-type {
+		padding: 00px 25px 10px;
+	}
+
+	.accComponent li:last-of-type table a:hover {
+		border-bottom: #ffc72c 3px solid;
 	}
 
 	/* 사이드 영역 */
@@ -196,6 +196,10 @@ ul {
 		flex: 1;
 		padding: 60px;
 		text-align: center;
+	}
+
+	aside div {
+		display: none;
 	}
 
 	aside img {
@@ -228,16 +232,13 @@ ul {
 		margin-bottom: 20px;
 	}
 
-	/* 링크 버튼 스타일 + 호버 효과 */
 	aside a {
 		display: inline-block;
-		/* 블록처럼 넓이 조절 가능 */
 		width: 260px;
 		height: 40px;
 		font-size: 16px;
 		font-weight: 700;
 		padding: 10px 0px;
-		/* line-height: 40px; */
 		border-radius: 10px;
 		border: 2px solid #000;
 		background-color: #fff;
@@ -248,29 +249,22 @@ ul {
 
 	aside a:hover {
 		background-color: #ffc72c;
-		/* 클릭 느낌 주기 */
 		color: #000;
 	}
 
-	/* 연락처 리스트 */
 	aside ul {
 		display: flex;
 		flex-direction: column;
-		/* 세로로 정렬 */
 		align-items: center;
-		/* 가로 가운데 정렬 */
 		padding: 0;
 		margin: 0 auto;
 		gap: 8px;
-		/* 아이템 간격 */
 	}
 
 	aside ul li {
 		display: flex;
 		align-items: center;
-		/* 아이콘과 텍스트 수평 가운데 */
 		gap: 8px;
-		/* 아이콘과 텍스트 사이 간격 */
 	}
 
 	aside ul li span {
@@ -282,7 +276,256 @@ ul {
 		font-size: 16px;
 	}
 
+	aside ul li:nth-child(2) p {
+		margin-top: 10px;
+		font-size: 14px;
+		color: #777;
+		margin: 0;
+	}
+}
 
+/* 모바일 레이아웃 */
+@media screen and (max-width : 1023px) and (min-width: 280px) {
 
+	.wrap {
+		margin: 0px auto;
+		display: flex;
+		flex-direction: column;
+		/* padding: 4%; */
+	}
 
+	main {
+		padding: 4%;
+		display: flex;
+		flex-direction: column;
+		order: 2;
+	}
+
+	main div {
+		display: none;
+	}
+
+	/* 아코디언 리스트 간격 */
+	main section li:not(:last-of-type) {
+		margin-bottom: 5px;
+	}
+
+	/* 아코디언 제목 */
+	.accComponent li h2 {
+		background-color: #ffc72c;
+		font-size: 20px;
+		font-weight: 700;
+		height: 60px;
+		line-height: 60px;
+		padding: 0 20px;
+		border-radius: 10px;
+		cursor: pointer;
+		position: relative;
+	}
+
+	/* 아코디언 화살표 */
+	.accComponent li h2:after {
+		content: "▼";
+		/* 기본 닫힘 상태 */
+		display: inline-block;
+		margin-left: 10px;
+		font-size: 18px;
+		transition: transform 0.3s;
+	}
+
+	.accComponent li h2.active:after {
+		transform: rotate(180deg);
+		/* 열림 상태 */
+	}
+
+	/* 아코디언 내용 테이블 */
+	.accComponent li table {
+		display: none;
+		width: 100%;
+		font-size: 14px;
+		padding: 10px;
+	}
+
+	.accComponent li table tr {
+		height: 50px;
+		line-height: 30px;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	td {
+		padding: 10px 25px;
+	}
+
+	td:nth-last-child(2) {
+		padding: 10px 0;
+	}
+
+	td:first-of-type {
+		width: 260px;
+	}
+
+	td:last-of-type {
+		width: 290px;
+	}
+
+	tr {
+		position: relative;
+	}
+
+	tr::after {
+		content: "";
+		position: absolute;
+		left: 20px;
+		right: 20px;
+		bottom: 0;
+		border-bottom: 1px solid black;
+	}
+
+	/* 더보기 버튼 */
+	.accComponent li button {
+		display: none;
+		padding: 10px 16px;
+		font-size: 14px;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+	}
+
+	.accComponent li:last-of-type table td {
+		display: block;
+		width: 100%;
+		padding: 0px 25px;
+	}
+
+	.accComponent li:last-of-type table td:first-of-type {
+		padding: 10px 25px 0px;
+	}
+
+	.accComponent li:last-of-type table td:last-of-type {
+		padding: 00px 25px 10px;
+	}
+
+	.accComponent li:last-of-type table a:hover {
+		border-bottom: #ffc72c 3px solid;
+	}
+
+	/* 사이드 영역 */
+	aside {
+		flex: 1;
+		padding: 4%;
+		text-align: center;
+		order: 1;
+	}
+
+	aside div strong {
+		position: relative;
+		font-size: clamp(34px, 8vw, 105px);
+		left: 50%;
+		transform: translateX(-51%);
+		color: #ffc72c;
+		-webkit-text-stroke: 2px #000;
+		/* 안정적으로 보이게 */
+		text-stroke: 2px #000;
+		/* 호환성 위해 같이 */
+		margin-bottom: 50px;
+		white-space: nowrap;
+		/* 한 줄로 유지 */
+	}
+
+	aside div strong::after {
+		content: "Jeong Dareum";
+		/* 텍스트 겹치기 효과 */
+		position: absolute;
+		left: 50%;
+		transform: translateX(-48%);
+		color: #fff;
+		-webkit-text-stroke: 2px #000;
+		/* 안정적으로 보이게 */
+		text-stroke: 2px #000;
+		/* 호환성 위해 같이 */
+	}
+
+	aside img {
+		width: 248px;
+		height: auto;
+		border-radius: 30px;
+		border: 2px solid #000;
+		margin-bottom: 20px;
+		transition: transform 0.3s;
+		/* 이미지에 호버 시 살짝 확대 */
+	}
+
+	aside img:hover {
+		transform: scale(1.05);
+	}
+
+	aside strong {
+		display: block;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 26px;
+		margin-bottom: 5px;
+	}
+
+	aside p {
+		font-size: 12px;
+		font-weight: 500;
+		color: #555;
+		line-height: 20px;
+		margin-bottom: 20px;
+	}
+
+	aside a {
+		display: inline-block;
+		width: 260px;
+		height: 40px;
+		font-size: 14px;
+		font-weight: 700;
+		padding: 10px 0px;
+		border-radius: 10px;
+		border: 2px solid #000;
+		background-color: #fff;
+		color: #222;
+		transition: all 0.3s;
+		margin-bottom: 15px;
+	}
+
+	aside a:hover {
+		background-color: #ffc72c;
+		color: #000;
+	}
+
+	aside ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+		margin: 0 auto;
+		gap: 8px;
+	}
+
+	aside ul li {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	aside ul li span {
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	.material-symbols-outlined {
+		font-size: 14px;
+	}
+
+	aside ul li:nth-child(2) p {
+		margin-top: 10px;
+		font-size: 12px;
+		color: #777;
+		margin: 0;
+	}
 }
