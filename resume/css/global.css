@@ -315,7 +315,7 @@ ul {
 	/* 아코디언 제목 */
 	.accComponent li h2 {
 		background-color: #ffc72c;
-		font-size: 20px;
+		font-size: 14px;
 		font-weight: 700;
 		height: 40px;
 		line-height: 40px;
@@ -331,7 +331,7 @@ ul {
 		/* 기본 닫힘 상태 */
 		display: inline-block;
 		margin-left: 10px;
-		font-size: 16px;
+		font-size: 10px;
 		transition: transform 0.3s;
 	}
 
@@ -468,7 +468,7 @@ ul {
 
 	aside img {
 		width: 80%;
-		max-width: 248px;
+		max-width: 240px;
 		height: auto;
 		border-radius: 10px;
 		border: 1px solid #000;
@@ -500,10 +500,11 @@ ul {
 	aside a {
 		display: inline-block;
 		width: 260px;
-		height: 30px;
+		height: 40px;
+		line-height: 40px;
 		font-size: 14px;
 		font-weight: 700;
-		padding: 7px 0px;
+		/* padding: 7px 0px; */
 		border-radius: 10px;
 		border: 1px solid #000;
 		background-color: #fff;
