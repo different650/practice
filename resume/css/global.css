@@ -376,7 +376,7 @@ ul {
 		position: relative;
 	}
 
-	tr::after {
+	/* tr::after {
 		content: "";
 		position: absolute;
 		left: 20px;
@@ -384,8 +384,16 @@ ul {
 		bottom: 0;
 		border-bottom: 1px solid black;
 		display: block;
-	}
-
+	} */
+tr::after {
+	content: "";
+	position: absolute;
+	left: 20px;
+	bottom: 0;
+	width: calc(100% - 40px);
+	height: 1px;
+	background-color: #000;
+}
 	/* 더보기 버튼 */
 	.accComponent li button {
 		display: none;
