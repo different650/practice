@@ -162,6 +162,7 @@ ul {
 		right: 20px;
 		bottom: 0;
 		border-bottom: 1px solid black;
+		display: block;
 	}
 
 	/* 더보기 버튼 */
@@ -382,6 +383,7 @@ ul {
 		right: 20px;
 		bottom: 0;
 		border-bottom: 1px solid black;
+		display: block;
 	}
 
 	/* 더보기 버튼 */
