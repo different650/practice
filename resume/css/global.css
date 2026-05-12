@@ -155,7 +155,7 @@ ul {
 		position: relative;
 	}
 
-	tr::after {
+	/* tr::after {
 		content: "";
 		position: absolute;
 		left: 20px;
@@ -163,8 +163,32 @@ ul {
 		bottom: 0;
 		border-bottom: 1px solid black;
 		display: block;
-	}
+	} */
+tr::after {
+	display: none;
+}
 
+td {
+	position: relative;
+}
+
+td::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: #000;
+}
+td:first-child::after {
+	left: 20px;
+	width: calc(100% - 20px);
+}
+
+td:last-child::after {
+	width: calc(100% - 20px);
+}
 	/* 더보기 버튼 */
 	.accComponent li button {
 		display: none;
@@ -386,13 +410,29 @@ ul {
 		display: block;
 	} */
 tr::after {
+	display: none;
+}
+
+td {
+	position: relative;
+}
+
+td::after {
 	content: "";
 	position: absolute;
-	left: 20px;
+	left: 0;
 	bottom: 0;
-	width: calc(100% - 40px);
+	width: 100%;
 	height: 1px;
-	background-color: #000;
+	background: #000;
+}
+td:first-child::after {
+	left: 20px;
+	width: calc(100% - 20px);
+}
+
+td:last-child::after {
+	width: calc(100% - 20px);
 }
 	/* 더보기 버튼 */
 	.accComponent li button {
