@@ -164,31 +164,33 @@ ul {
 		border-bottom: 1px solid black;
 		display: block;
 	} */
-tr::after {
-	display: none;
-}
+	tr::after {
+		display: none;
+	}
 
-td {
-	position: relative;
-}
+	td {
+		position: relative;
+	}
 
-td::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 1px;
-	background: #000;
-}
-td:first-child::after {
-	left: 20px;
-	width: calc(100% - 20px);
-}
+	td::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background: #000;
+	}
 
-td:last-child::after {
-	width: calc(100% - 20px);
-}
+	td:first-child::after {
+		left: 20px;
+		width: calc(100% - 20px);
+	}
+
+	td:last-child::after {
+		width: calc(100% - 20px);
+	}
+
 	/* 더보기 버튼 */
 	.accComponent li button {
 		display: none;
@@ -199,10 +201,20 @@ td:last-child::after {
 		border: none;
 	}
 
+	.accComponent li:last-of-type table td::after {
+		height: 0px;
+	}
+
 	.accComponent li:last-of-type table td {
 		display: block;
 		width: 100%;
 		padding: 0px 25px;
+	}
+
+	.accComponent li:last-of-type table td:last-child::after {
+		height: 1px;
+		left: 20px;
+		width: calc(100% - 40px);
 	}
 
 	.accComponent li:last-of-type table td:first-of-type {
@@ -220,7 +232,7 @@ td:last-child::after {
 	/* 사이드 영역 */
 	aside {
 		flex: 1;
-		padding: 60px  60px  60px  0px;
+		padding: 60px 60px 60px 0px;
 		text-align: center;
 	}
 
@@ -409,31 +421,33 @@ td:last-child::after {
 		border-bottom: 1px solid black;
 		display: block;
 	} */
-tr::after {
-	display: none;
-}
+	tr::after {
+		display: none;
+	}
 
-td {
-	position: relative;
-}
+	td {
+		position: relative;
+	}
 
-td::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 1px;
-	background: #000;
-}
-td:first-child::after {
-	left: 20px;
-	width: calc(100% - 20px);
-}
+	td::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background: #000;
+	}
 
-td:last-child::after {
-	width: calc(100% - 20px);
-}
+	td:first-child::after {
+		left: 20px;
+		width: calc(100% - 20px);
+	}
+
+	td:last-child::after {
+		width: calc(100% - 20px);
+	}
+
 	/* 더보기 버튼 */
 	.accComponent li button {
 		display: none;
