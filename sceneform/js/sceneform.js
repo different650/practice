@@ -54,6 +54,7 @@ numbers.forEach((el, i) => {
 
 $(function () {
   modalControl();
+  menuControl();
 });
 
 function modalControl() {
@@ -80,6 +81,16 @@ function modalControl() {
 
     // on 클래스 제거 → 모달 닫기
     $modal.removeClass('on');
+  });
+
+}
+
+function menuControl() {
+
+  $('.menu-button').on('click', function () {
+
+    $('header nav').toggleClass('active');
+
   });
 
 }
