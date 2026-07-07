@@ -87,9 +87,35 @@ function modalControl() {
 
 function menuControl() {
 
+  // 메뉴 버튼 클릭 이벤트 등록
   $('.menu-button').on('click', function () {
 
+    // 1. header nav에 active 클래스 토글
+    // - active 있으면 제거 (메뉴 닫힘)
+    // - active 없으면 추가 (메뉴 열림)
     $('header nav').toggleClass('active');
+
+    // 2. 클릭한 버튼 안의 아이콘 요소 가져오기
+    const icon = $(this).find('.material-symbols-outlined');
+
+    // 3. 버튼이 "active 상태인지" 확인
+    // - active 있으면 메뉴 열린 상태
+    if ($(this).hasClass('active')) {
+
+      // 메뉴 닫는 상태로 변경
+      $(this).removeClass('active');
+
+      // 아이콘을 menu (☰)로 변경
+      icon.text('menu');
+
+    } else {
+
+      // 메뉴 여는 상태로 변경
+      $(this).addClass('active');
+
+      // 아이콘을 close (✕)로 변경
+      icon.text('close');
+    }
 
   });
 

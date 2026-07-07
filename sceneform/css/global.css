@@ -24,18 +24,18 @@ li {
   .inner {
     max-width: 1440px;
     margin: 0 auto;
+    padding: 120px 60px;
   }
 
   .logo {
-    /* height: 58px; */
+    display: inline-block;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    line-height: 26px;
     font-weight: 700;
     color: #ffffff;
-    padding: 10px 20px;
-    border: 10px #ffffff solid;
-    border-left: 30px solid;
+    padding: 8px 16px;
+    border: 8px #ffffff solid;
+    border-left: 24px solid;
   }
 
   .title {
@@ -44,14 +44,14 @@ li {
     line-height: 26px;
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 
   .title::after {
     content: '';
     width: 60px;
     height: 1px;
-    margin-left: 20px;
+    margin-left: 24px;
     background-color: #0a0a0a;
     display: inline-block;
     /* ::after는 기본이 inline이라 크기 안 먹을 수 있음
@@ -62,7 +62,7 @@ li {
     display: block;
     font-size: 32px;
     line-height: 42px;
-    margin-bottom: 20px;
+    margin-bottom: 48px;
   }
 
   .desc {
@@ -77,7 +77,7 @@ li {
   .view-button {
     font-size: 16px;
     line-height: 26px;
-    padding: 15px 20px;
+    padding: 14px 20px;
     border: 1px #0a0a0a solid;
     /* display: inline-block; */
     /* a 태그를 버튼처럼 사용할 때는 거의 inline-block 국룰
@@ -87,6 +87,11 @@ li {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
+  }
+
+  .view-button .material-symbols-outlined {
+    font-size: 26px;
   }
 
   .view-button:hover {
@@ -100,6 +105,7 @@ li {
     top: 0;
     left: 0;
     width: 100%;
+    height: 108px;
     z-index: 100;
     background-color: #0a0a0a;
   }
@@ -111,21 +117,13 @@ li {
     padding: 30px 20px;
   }
 
-  header h1 {
-    max-width: 200px;
-  }
-
-  header h1 a {
-    display: block;
-  }
-
   header .menu-button {
     display: none;
   }
 
   header nav ul {
     display: flex;
-    gap: 65px;
+    gap: 70px;
   }
 
   header nav ul li a {
@@ -138,90 +136,32 @@ li {
 
   /* ---------- VISUAL---------- */
   .visual {
-    height: 700px;
+    height: auto;
     background: #0a0a0a;
     overflow: hidden;
-    margin-top: 126px;
+    margin-top: 108px;
   }
 
   .visual .inner {
     display: flex;
     width: 100%;
-    height: 100%;
     padding: 0 20px;
+    position: relative;
+    align-items: center;
+    gap: 24px
   }
 
+  /* 이미지 */
   .visual .inner>div:first-of-type {
+    order: 2;
     flex: 1;
     min-width: 0;
     /* Swiper가 flex 영역에서 과도하게 확장되는 문제 방지 */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 80px;
-  }
-
-  .visual .inner>div:first-of-type h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 56px;
-    line-height: 76px;
-    color: #ffffff;
-  }
-
-  .visual .inner>div:first-of-type p {
-    font-size: 16px;
-    line-height: 36px;
-    color: #ffffff;
-  }
-
-  /* 번호 */
-  .visual .inner>div:first-of-type .slide_num {
-    position: absolute;
-    left: 0;
-  }
-
-  .visual .inner>div:first-of-type .slide_num li {
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 26px;
-    cursor: pointer;
-    opacity: 0.4;
-    transition: opacity 0.3s;
-  }
-
-  .visual .inner>div:first-of-type .slide_num li.on {
-    font-size: 32px;
-    line-height: 42px;
-    opacity: 1;
-  }
-
-  .visual .inner>div:first-of-type .slide_num li::before {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 60px;
-    background: #ffffff;
-    margin: 10px 0;
-  }
-
-  /* 스와이프 */
-  .visual .inner>div:last-of-type {
-    flex: 2;
-    min-width: 0;
-    /* Swiper가 flex 영역에서 과도하게 확장되는 문제 방지 */
-    height: 100%;
-    /* position: relative; */
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
   }
 
   .visual .swiper {
     width: 100%;
-    height: 100%;
-    /* position: relative; */
-    /* overflow: hidden; */
+    aspect-ratio: 4/2.5;
   }
 
   .visual .swiper-slide img {
@@ -231,30 +171,94 @@ li {
     display: block;
   }
 
+  /* 그라데이션 */
   .visual .gradient {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    width: calc(100% - 488px);
+    height: 100%;
     z-index: 2;
-
-    background: radial-gradient(ellipse 80% 80% at center,
+    pointer-events: none;
+    /* background: radial-gradient(ellipse 50% 80% at 69% 50%,
         rgba(0, 0, 0, 0) 0%,
         rgba(0, 0, 0, 0) 50%,
         rgba(0, 0, 0, 1) 60%,
-        rgba(0, 0, 0, 1) 100%);
+        rgba(0, 0, 0, 1) 100%); */
+    background: linear-gradient(to right,
+        rgba(0, 0, 0, 1) 2%,
+        rgba(0, 0, 0, 0) 20%,
+        rgba(0, 0, 0, 0) 80%,
+        rgba(0, 0, 0, 1) 98%);
+  }
+
+  /* 번호 */
+  .visual .inner .slide_num {
+    position: absolute;
+    left: 20px;
+    z-index: 4;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .visual .inner .slide_num li {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 26px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+
+  .visual .inner .slide_num li.on {
+    font-size: 24px;
+    line-height: 34px;
+    opacity: 1;
+  }
+
+  .visual .inner .slide_num li::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 60px;
+    background: #ffffff;
+    margin: 10px 0;
+  }
+
+  /* 텍스트 */
+  .visual .inner>div:last-of-type {
+    order: 1;
+    width: 424px;
+    z-index: 3;
+    margin-left: 40px;
+    padding-left: 40px;
+  }
+
+  .visual .inner>div:last-of-type h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    line-height: 86px;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+
+  .visual .inner>div:last-of-type p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #ffffff;
   }
 
   /* ---------- ABOUT US----------  */
   .about {
     background-color: #ffffff;
-    padding: 60px 60px 50px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 24px;
   }
 
   /* 왼쪽 */
   .about>div {
-    width: 330px;
+    width: 424px;
     flex-shrink: 0;
     /* flex-shrink: 0;
    남는 공간 있어도 늘어나지 않음
@@ -266,19 +270,20 @@ li {
 
   /* 오른쪽 */
   .about ul {
-    width: 660px;
+    flex: 1;
     display: flex;
+    justify-content: right;
   }
 
   .about ul li {
-    flex: 1;
+    width: 200px;
   }
 
   .about ul li:first-of-type,
   .about ul li:nth-of-type(2) {
-    width: calc(100% - 60px);
-    padding-right: 55px;
-    margin-right: 55px;
+    /* width: calc(100% - 120px); */
+    margin-right: 48px;
+    padding-right: 48px;
   }
 
   .about ul li:not(:last-of-type) {
@@ -288,7 +293,8 @@ li {
   .about ul li strong {
     display: block;
     font-size: 32px;
-    margin-bottom: 30px;
+    line-height: 42px;
+    margin-bottom: 24px;
   }
 
   .about ul li span {
@@ -301,18 +307,19 @@ li {
   /* ---------- PROJECT----------  */
   .project {
     background-color: #0a0a0a;
-    padding: 60px 20px 50px;
   }
 
   .project .inner {
     display: flex;
     justify-content: space-between;
+    padding: 120px 20px;
+    gap: 24px;
   }
 
   /* 왼쪽 */
   .project .inner>div {
-    width: 255px;
-    margin-right: 20px;
+    width: 332px;
+    /* margin-right: 25px; */
     flex-shrink: 0;
     /* flex-shrink: 0;
    남는 공간 있어도 늘어나지 않음
@@ -339,9 +346,10 @@ li {
 
   /* 오른쪽 */
   .project .inner ul {
-    width: 1030px;
+    /* width: 1030px; */
+    flex: 1;
     display: flex;
-    gap: 10px;
+    gap: 24px;
   }
 
   .project .inner ul li {
@@ -352,7 +360,7 @@ li {
     width: 100%;
     display: block;
     /* 이미지 아래에 생기는 이상한 여백 제거 */
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4/3;
     object-fit: cover;
     overflow: hidden;
     margin-bottom: 20px;
@@ -364,26 +372,29 @@ li {
     font-size: 16px;
     line-height: 26px;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
   .project ul li figure figcaption p {
     font-size: 16px;
     line-height: 26px;
     color: #ffffff;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   /* ---------- PROJECT DETAIL----------  */
   .detail {
     background-color: #ffffff;
-    padding: 60px 60px 50px;
     display: flex;
-    justify-content: space-between;
+    gap: 24px;
   }
 
   /* 왼쪽 */
   .detail>div:first-of-type {
-    width: 330px;
+    width: 312px;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -391,9 +402,8 @@ li {
    남는 공간 있어도 늘어나지 않음
    flex-shrink: 0;
    화면이 줄어도 줄어들지 않음 
-   늘어나지 않음 | 줄어들지 않음 | 330px 고정
-    flex: 0 0 330px; */
-    margin-right: 20px;
+   늘어나지 않음 | 줄어들지 않음 | 312px 고정
+    flex: 0 0 312px; */
   }
 
   .detail>div:first-of-type dl {
@@ -401,12 +411,12 @@ li {
     line-height: 26px;
     display: grid;
     grid-template-columns: 100px 1fr;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .detail>div:first-of-type dl dt,
   .detail>div:first-of-type dl dd {
-    padding: 10px 0px;
+    padding: 16px 0px;
     margin: 0;
     border-bottom: 1px #0a0a0a solid;
   }
@@ -426,7 +436,6 @@ li {
     background: rgba(10, 10, 10, 0.8);
     justify-content: center;
     align-items: center;
-    /* 정가운데 배치 */
     z-index: 100;
   }
 
@@ -435,10 +444,8 @@ li {
   }
 
   .detail .modal img {
-    width: 66.666%;
-    /* = 2/3 */
-    max-width: 900px;
-    /* 너무 커지는 것 방지 */
+    width: 70%;
+    max-width: 1000px;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     display: block;
@@ -446,8 +453,8 @@ li {
 
   .detail .modal .close {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 60px;
+    right: 20px;
     background: none;
     border: 0;
     cursor: pointer;
@@ -458,23 +465,23 @@ li {
   }
 
   .detail>div:last-of-type {
-    width: 950px;
+    flex: 1;
   }
 
   .detail>div:last-of-type figure img {
     width: 100%;
     height: 100%;
     display: block;
-    aspect-ratio: 4 / 1;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .detail>div:last-of-type ul {
     width: 100%;
     display: flex;
-    gap: 10px;
+    gap: 20px;
   }
 
   .detail>div:last-of-type ul li {
@@ -484,48 +491,46 @@ li {
   .detail>div:last-of-type ul li strong {
     display: block;
     border: 1px #0a0a0a solid;
-    padding: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    line-height: 26px;
   }
 
   .detail>div:last-of-type ul li img {
     width: 100%;
     display: block;
     /* 이미지 아래에 생기는 이상한 여백 제거 */
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4/3;
     object-fit: cover;
     overflow: hidden;
     border: 1px #0a0a0a solid;
     border-top: 0px;
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
   }
 
   /* ---------- OUR PROCESS----------  */
   .process {
     background-color: #ffffff;
-    padding: 60px 60px 50px;
-  }
-
-  .process>h2,
-  .process>b {
-    width: 330px;
+    border-top: 1px solid #ddd;
   }
 
   .process ul {
     display: flex;
     justify-content: space-between;
+    gap: 24PX;
   }
 
   .process li {
     border: 1px #0a0a0a solid;
-    width: 185px;
-    padding: 25px;
+    padding: 24px;
     text-align: center;
+    flex: 1;
   }
 
   .process .process-icon {
     display: block;
-    font-size: 50px;
+    font-size: 56px;
     margin-bottom: 20px;
     font-variation-settings:
       'FILL' 0,
@@ -534,19 +539,21 @@ li {
       'opsz' 48;
   }
 
-  .process strong {
+  .process ul li strong {
     display: block;
     font-size: 16px;
     line-height: 26px;
+    margin-bottom: 8px;
   }
 
   .process ul li b {
     display: block;
     font-size: 16px;
     line-height: 26px;
+    margin-bottom: 12px;
   }
 
-  .process p {
+  .process ul li p {
     font-size: 16px;
     line-height: 26px;
   }
@@ -554,28 +561,32 @@ li {
   /* ---------- footer----------  */
   footer {
     background-color: #0a0a0a;
-    padding: 60px 20px 50px;
+  }
+
+  footer .inner {
+    padding: 60px 20px;
   }
 
   footer .inner>div {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
     color: #ffffff;
+    gap: 24px;
+    margin-bottom: 48px;
   }
 
-  footer .inner>div div,
-  footer .inner>div img {
-    width: 300px;
+  footer .inner>div>div,
+  footer .inner>div>img {
+    flex: 1;
   }
 
-  footer .inner>div h2::after {
+  footer .inner>div div:first-of-type h2::after {
     background-color: #ffffff;
   }
 
   /* 두번째 */
-  footer .inner>div form fieldset legend,
-  footer .inner>div form fieldset ul li label {
+  footer form fieldset legend,
+  footer form fieldset ul li label {
     /* 시각적으로는 숨기지만 스크린 리더는 읽을 수 있도록 접근성을 위해 사용*/
     position: absolute;
     width: 1px;
@@ -585,65 +596,68 @@ li {
     clip: rect(0, 0, 0, 0);
   }
 
-  footer .inner>div form fieldset ul {
+  footer form fieldset ul {
     display: flex;
     flex-wrap: wrap;
     /* 공간이 부족하면 다음 줄로 배치 */
-    gap: 10px;
+    gap: 16px;
   }
 
-  footer .inner>div form fieldset ul li:first-of-type,
-  footer .inner>div form fieldset ul li:nth-of-type(2) {
-    width: calc((100% - 10px) / 2);
+  footer form fieldset ul li:first-of-type,
+  footer form fieldset ul li:nth-of-type(2) {
+    width: calc((100% - 16px) / 2);
   }
 
-  footer .inner>div form li:nth-child(3),
-  footer .inner>div form li:nth-child(4),
-  footer .inner>div form li:nth-child(5) {
+  footer form li:nth-child(3),
+  footer form li:nth-child(4),
+  footer form li:nth-child(5) {
     width: 100%;
   }
 
-  footer .inner>div form fieldset ul li input,
-  footer .inner>div form fieldset ul li textarea,
-  footer .inner>div form fieldset ul li button {
+  footer form fieldset ul li input,
+  footer form fieldset ul li textarea,
+  footer form fieldset ul li .view-button {
     width: 100%;
     color: #ffffff;
     background-color: transparent;
     border: 1px solid #ffffff;
   }
 
-  footer .inner>div form fieldset ul li input::placeholder,
-  footer .inner>div form fieldset ul li textarea::placeholder {
+  footer form fieldset ul li input::placeholder,
+  footer form fieldset ul li textarea::placeholder {
     color: #ffffff;
   }
 
-  footer .inner>div form fieldset ul li input,
-  footer .inner>div form fieldset ul li textarea,
-  footer .inner>div form fieldset ul li button {
+  footer form fieldset ul li input,
+  footer form fieldset ul li textarea,
+  footer form fieldset ul li .view-button {
     font: inherit;
     font-size: 16px;
     line-height: 26px;
-    padding: 15px 20px;
+    padding: 16px 20px;
   }
 
-  footer .inner>div form fieldset ul li input:focus,
-  footer .inner>div form fieldset ul li textarea:focus {
+  footer form fieldset ul li input:focus,
+  footer form fieldset ul li textarea:focus {
     outline: none;
     border-color: #3d6dff;
   }
 
-  footer .inner>div form fieldset ul li input:focus::placeholder,
-  footer .inner>div form fieldset ul li textarea:focus::placeholder {
+  footer form fieldset ul li input:focus::placeholder,
+  footer form fieldset ul li textarea:focus::placeholder {
     opacity: 0;
   }
 
-  footer .inner>div form fieldset ul li button {
+  footer form fieldset ul li .view-button {
     cursor: pointer;
   }
 
   footer img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
     filter: brightness(0.7);
+    min-width: 0;
   }
 
   footer .inner>div>div:last-of-type {
@@ -656,9 +670,9 @@ li {
     max-width: 200px;
   }
 
-  footer .inner>div>div:last-of-type h2 a {
+  /* footer .inner>div>div:last-of-type h2 a {
     display: block;
-  }
+  } */
 
   footer .inner>div>div:last-of-type h2 a img {
     width: 100%;
@@ -669,7 +683,8 @@ li {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 20px;
+    justify-content: flex-end;
     font-size: 16px;
     line-height: 26px;
   }
@@ -677,7 +692,8 @@ li {
   footer .inner>div>div:last-of-type>div ul {
     display: flex;
     align-items: center;
-    gap: 20px;
+    width: 180px;
+    justify-content: space-between;
   }
 
   footer .inner>div>div:last-of-type>div ul li {
@@ -704,7 +720,6 @@ li {
   footer .inner>div>div:last-of-type>div ul li:nth-child(3) {
     background-image: url("../images/tiktok.png");
     width: 16px;
-    /* height: 18px; */
   }
 
   footer .inner>div>div:last-of-type>div ul li:nth-child(4) {
@@ -729,7 +744,6 @@ li {
     font-size: 16px;
     line-height: 26px;
     text-align: center;
-    margin-top: 50px;
   }
 }
 
@@ -739,33 +753,32 @@ li {
   .inner {
     width: 100%;
     margin: 0 auto;
-    padding: 50px 20px 40px;
+    padding: 100px 20px;
   }
 
   .logo {
-    /* height: 58px; */
+    display: inline-block;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
     font-weight: 700;
     color: #ffffff;
-    padding: 10px 20px;
-    border: 10px #ffffff solid;
-    border-left: 30px solid;
+    padding: 6px 12px;
+    border: 6px #ffffff solid;
+    border-left: 18px solid;
   }
 
   .title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .title::after {
     content: '';
-    width: 60px;
+    width: 50px;
     height: 1px;
     margin-left: 20px;
     background-color: #0a0a0a;
@@ -776,14 +789,14 @@ li {
 
   .subtitle {
     display: block;
-    font-size: 32px;
-    line-height: 42px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 40px;
   }
 
   .desc {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
   }
 
   .en {
@@ -791,9 +804,9 @@ li {
   }
 
   .view-button {
-    font-size: 16px;
-    line-height: 26px;
-    padding: 15px 20px;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 12px 16px;
     border: 1px #0a0a0a solid;
     /* display: inline-block; */
     /* a 태그를 버튼처럼 사용할 때는 거의 inline-block 국룰
@@ -803,6 +816,11 @@ li {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+    gap: 14px;
+  }
+
+  .view-button .material-symbols-outlined {
+    font-size: 24px;
   }
 
   .view-button:hover {
@@ -816,6 +834,7 @@ li {
     top: 0;
     left: 0;
     width: 100%;
+    height: 88px;
     z-index: 100;
     background-color: #0a0a0a;
   }
@@ -824,15 +843,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 20px;
-  }
-
-  header h1 {
-    max-width: 200px;
-  }
-
-  header h1 a {
-    display: block;
+    padding: 25px 20px;
   }
 
   header .menu-button {
@@ -841,108 +852,54 @@ li {
 
   header nav ul {
     display: flex;
-    gap: 65px;
+    gap: 60px;
   }
 
   header nav ul li a {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
     font-weight: 700;
     color: #ffffff;
   }
 
   /* ---------- VISUAL---------- */
   .visual {
-    height: 700px;
+    height: auto;
     background: #0a0a0a;
     overflow: hidden;
-    margin-top: 126px;
+    margin-top: 88px;
   }
 
   .visual .inner {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    padding: 0 20px;
-  }
-
-  .visual .inner>div:first-of-type {
-    flex: 1;
-    min-width: 0;
-    /* Swiper가 flex 영역에서 과도하게 확장되는 문제 방지 */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 80px;
-  }
-
-  .visual .inner>div:first-of-type h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 56px;
-    line-height: 76px;
-    color: #ffffff;
-  }
-
-  .visual .inner>div:first-of-type p {
-    font-size: 16px;
-    line-height: 36px;
-    color: #ffffff;
-  }
-
-  /* 번호 */
-  .visual .inner>div:first-of-type .slide_num {
-    position: absolute;
-    left: 0;
-  }
-
-  .visual .inner>div:first-of-type .slide_num li {
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 26px;
-    cursor: pointer;
-    opacity: 0.4;
-    transition: opacity 0.3s;
-  }
-
-  .visual .inner>div:first-of-type .slide_num li.on {
-    font-size: 32px;
-    line-height: 42px;
-    opacity: 1;
-  }
-
-  .visual .inner>div:first-of-type .slide_num li::before {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 60px;
-    background: #ffffff;
-    margin: 10px 0;
-  }
-
-  /* 스와이프 */
-  .visual .inner>div:last-of-type {
-    flex: 2;
-    min-width: 0;
-    /* Swiper가 flex 영역에서 과도하게 확장되는 문제 방지 */
-    height: 100%;
-    /* position: relative; */
     /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    flex-direction: column; */
+    width: 100%;
+    padding: 0;
+    position: relative;
   }
+
+  /* 이미지 */
+  /* .visual .inner>div:first-of-type {
+    order: 1;
+    margin-bottom: 16px;
+  } */
 
   .visual .swiper {
     width: 100%;
-    height: 100%;
-    /* position: relative; */
-    /* overflow: hidden; */
+    aspect-ratio: 4 / 2.5;
+  }
+
+  .visual .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .visual .swiper-slide img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 4 / 2.5;
     object-fit: cover;
     display: block;
   }
@@ -950,39 +907,86 @@ li {
   .visual .gradient {
     position: absolute;
     inset: 0;
+    /* top: 0; right: 0; bottom: 0; left: 0; 한 번에 쓴 것*/
     z-index: 2;
+    aspect-ratio: 4 / 2.5;
+    pointer-events: none;
+    background: linear-gradient(35deg,
+        rgba(0, 0, 0, .95) 0%,
+        rgba(0, 0, 0, .8) 25%,
+        rgba(0, 0, 0, .35) 50%,
+        rgba(0, 0, 0, 0) 75%);
+  }
 
-    background: radial-gradient(ellipse 80% 80% at center,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0) 50%,
-        rgba(0, 0, 0, 1) 60%,
-        rgba(0, 0, 0, 1) 100%);
+  /* 번호 */
+  .visual .inner .slide_num {
+    position: absolute;
+    right: 40px;
+    bottom: 50px;
+    /* order: 2; */
+    z-index: 4;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .visual .inner .slide_num li {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 24px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+
+  .visual .inner .slide_num li.on {
+    opacity: 1;
+  }
+
+  .visual .inner .slide_num li::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #ffffff;
+  }
+
+  /* 텍스트 */
+  .visual .inner>div:last-of-type {
+    position: absolute;
+    /* order: 3; */
+    width: 390px;
+    left: 40px;
+    bottom: 50px;
+    z-index: 3;
+  }
+
+  .visual .inner>div:last-of-type h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    line-height: 64px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .visual .inner>div:last-of-type p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffffff;
   }
 
   /* ---------- ABOUT US----------  */
   .about {
     background-color: #ffffff;
-    padding: 60px 60px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   /* 왼쪽 */
   .about>div {
-    width: 330px;
-    flex-shrink: 0;
-    /* flex-shrink: 0;
-   남는 공간 있어도 늘어나지 않음
-   flex-shrink: 0;
-   화면이 줄어도 줄어들지 않음 
-   늘어나지 않음 | 줄어들지 않음 | 330px 고정
-    flex: 0 0 330px; */
+    margin-bottom: 50px;
   }
 
   /* 오른쪽 */
   .about ul {
-    width: 660px;
     display: flex;
   }
 
@@ -992,9 +996,9 @@ li {
 
   .about ul li:first-of-type,
   .about ul li:nth-of-type(2) {
-    width: calc(100% - 60px);
-    padding-right: 55px;
-    margin-right: 55px;
+    width: calc(100% - 40px);
+    margin-right: 24px;
+    padding-right: 24px;
   }
 
   .about ul li:not(:last-of-type) {
@@ -1003,42 +1007,29 @@ li {
 
   .about ul li strong {
     display: block;
-    font-size: 32px;
-    margin-bottom: 30px;
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 20px;
   }
 
   .about ul li span {
     display: block;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
   }
 
   /* ---------- PROJECT----------  */
   .project {
     background-color: #0a0a0a;
-    padding: 60px 20px 50px;
   }
 
   .project .inner {
-    display: flex;
-    justify-content: space-between;
+    padding: 100px 20px;
   }
 
   /* 왼쪽 */
   .project .inner>div {
-    width: 255px;
-    margin-right: 20px;
-    flex-shrink: 0;
-    /* flex-shrink: 0;
-   남는 공간 있어도 늘어나지 않음
-   flex-shrink: 0;
-   화면이 줄어도 줄어들지 않음 
-   늘어나지 않음 | 줄어들지 않음 | 255px 고정
-    flex: 0 0 255px; */
-    display: flex;
-    flex-direction: column;
-    /* 링크를 하단으로 배치하기 위해 세로 정렬 */
     color: #ffffff;
   }
 
@@ -1046,23 +1037,30 @@ li {
     background-color: #ffffff;
   }
 
+  /* .project .inner>div b {
+    display: inline-block;
+  } */
+
   .project .inner>div a {
-    margin-top: auto;
-    /* 링크를 영역 하단으로 배치 */
     border-color: #ffffff;
     color: #ffffff;
+    /* float: right; */
+    width: 250px;
+    margin-bottom: 32px;
   }
 
   /* 오른쪽 */
   .project .inner ul {
-    width: 1030px;
-    display: flex;
-    gap: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(294px, 1fr)); */
+    gap: 20px;
   }
 
-  .project .inner ul li {
-    flex: 1;
-  }
+  /* .project .inner ul li:last-of-type {
+    display: none;
+  } */
 
   .project ul li figure img {
     width: 100%;
@@ -1071,58 +1069,56 @@ li {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .project ul li figure figcaption strong {
     display: block;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .project ul li figure figcaption p {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
     color: #ffffff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   /* ---------- PROJECT DETAIL----------  */
   .detail {
     background-color: #ffffff;
-    padding: 60px 60px 50px;
-    display: flex;
-    justify-content: space-between;
+    position: relative;
   }
 
   /* 왼쪽 */
   .detail>div:first-of-type {
-    width: 330px;
+    position: absolute;
+    width: calc((100% - 40px) / 3);
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     /* flex-shrink: 0;
-   남는 공간 있어도 늘어나지 않음
-   flex-shrink: 0;
-   화면이 줄어도 줄어들지 않음 
-   늘어나지 않음 | 줄어들지 않음 | 330px 고정
-    flex: 0 0 330px; */
+   남는 공간 있어도 늘어나지 않음 */
     margin-right: 20px;
   }
 
   .detail>div:first-of-type dl {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
     display: grid;
     grid-template-columns: 100px 1fr;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
   }
 
   .detail>div:first-of-type dl dt,
   .detail>div:first-of-type dl dd {
-    padding: 10px 0px;
+    padding: 12px 0px;
     margin: 0;
     border-bottom: 1px #0a0a0a solid;
   }
@@ -1142,7 +1138,6 @@ li {
     background: rgba(10, 10, 10, 0.8);
     justify-content: center;
     align-items: center;
-    /* 정가운데 배치 */
     z-index: 100;
   }
 
@@ -1151,10 +1146,8 @@ li {
   }
 
   .detail .modal img {
-    width: 66.666%;
-    /* = 2/3 */
-    max-width: 900px;
-    /* 너무 커지는 것 방지 */
+    width: 75%;
+    max-width: 1000px;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     display: block;
@@ -1162,8 +1155,8 @@ li {
 
   .detail .modal .close {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 50px;
+    right: 20px;
     background: none;
     border: 0;
     cursor: pointer;
@@ -1173,24 +1166,20 @@ li {
     color: #fff;
   }
 
-  .detail>div:last-of-type {
-    width: 950px;
-  }
-
   .detail>div:last-of-type figure img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    aspect-ratio: 4 / 1;
+    width: calc(((100% / 3) * 2) - 20px);
+    height: 400px;
     object-fit: cover;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    margin-left: calc((100% / 3) + 20px);
   }
 
   .detail>div:last-of-type ul {
     width: 100%;
-    display: flex;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
   }
 
   .detail>div:last-of-type ul li {
@@ -1200,7 +1189,9 @@ li {
   .detail>div:last-of-type ul li strong {
     display: block;
     border: 1px #0a0a0a solid;
-    padding: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 24px;
   }
 
   .detail>div:last-of-type ul li img {
@@ -1212,37 +1203,32 @@ li {
     overflow: hidden;
     border: 1px #0a0a0a solid;
     border-top: 0px;
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
   }
 
   /* ---------- OUR PROCESS----------  */
   .process {
     background-color: #ffffff;
-    padding: 60px 60px 50px;
-  }
-
-  .process>h2,
-  .process>b {
-    width: 330px;
+    border-top: 1px solid #ddd;
   }
 
   .process ul {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   .process li {
     border: 1px #0a0a0a solid;
-    width: 185px;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
   }
 
   .process .process-icon {
     display: block;
-    font-size: 50px;
-    margin-bottom: 20px;
+    font-size: 44px;
+    margin-bottom: 16px;
     font-variation-settings:
       'FILL' 0,
       'wght' 300,
@@ -1250,48 +1236,55 @@ li {
       'opsz' 48;
   }
 
-  .process strong {
+  .process ul li strong {
     display: block;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 8px;
   }
 
   .process ul li b {
     display: block;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 12px;
   }
 
-  .process p {
-    font-size: 16px;
-    line-height: 26px;
+  .process ul li p {
+    font-size: 14px;
+    line-height: 24px;
   }
 
   /* ---------- footer----------  */
   footer {
     background-color: #0a0a0a;
-    padding: 60px 20px 50px;
+  }
+
+  footer .inner {
+    padding: 50px 20px;
   }
 
   footer .inner>div {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
     color: #ffffff;
+    margin-bottom: 40px;
   }
 
-  footer .inner>div div,
-  footer .inner>div img {
-    width: 300px;
-  }
-
-  footer .inner>div h2::after {
+  footer .inner>div div:first-of-type h2::after {
     background-color: #ffffff;
   }
 
+  footer .inner>div div:first-of-type .desc {
+    margin-bottom: 35px;
+  }
+
   /* 두번째 */
-  footer .inner>div form fieldset legend,
-  footer .inner>div form fieldset ul li label {
+  footer form {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  footer form fieldset legend,
+  footer form fieldset ul li label {
     /* 시각적으로는 숨기지만 스크린 리더는 읽을 수 있도록 접근성을 위해 사용*/
     position: absolute;
     width: 1px;
@@ -1301,79 +1294,72 @@ li {
     clip: rect(0, 0, 0, 0);
   }
 
-  footer .inner>div form fieldset ul {
+  footer form fieldset ul {
     display: flex;
     flex-wrap: wrap;
     /* 공간이 부족하면 다음 줄로 배치 */
-    gap: 10px;
+    gap: 16px;
   }
 
-  footer .inner>div form fieldset ul li:first-of-type,
-  footer .inner>div form fieldset ul li:nth-of-type(2) {
-    width: calc((100% - 10px) / 2);
+  footer form fieldset ul li:first-of-type,
+  footer form fieldset ul li:nth-of-type(2) {
+    width: calc((100% - 16px) / 2);
   }
 
-  footer .inner>div form li:nth-child(3),
-  footer .inner>div form li:nth-child(4),
-  footer .inner>div form li:nth-child(5) {
+  footer form li:nth-child(3),
+  footer form li:nth-child(4),
+  footer form li:nth-child(5) {
     width: 100%;
   }
 
-  footer .inner>div form fieldset ul li input,
-  footer .inner>div form fieldset ul li textarea,
-  footer .inner>div form fieldset ul li button {
+  footer form fieldset ul li input,
+  footer form fieldset ul li textarea,
+  footer form fieldset ul li .view-button {
     width: 100%;
     color: #ffffff;
     background-color: transparent;
     border: 1px solid #ffffff;
   }
 
-  footer .inner>div form fieldset ul li input::placeholder,
-  footer .inner>div form fieldset ul li textarea::placeholder {
+  footer form fieldset ul li input::placeholder,
+  footer form fieldset ul li textarea::placeholder {
     color: #ffffff;
   }
 
-  footer .inner>div form fieldset ul li input,
-  footer .inner>div form fieldset ul li textarea,
-  footer .inner>div form fieldset ul li button {
+  footer form fieldset ul li input,
+  footer form fieldset ul li textarea,
+  footer form fieldset ul li .view-button {
     font: inherit;
-    font-size: 16px;
-    line-height: 26px;
-    padding: 15px 20px;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 16px 20px;
   }
 
-  footer .inner>div form fieldset ul li input:focus,
-  footer .inner>div form fieldset ul li textarea:focus {
+  footer form fieldset ul li input:focus,
+  footer form fieldset ul li textarea:focus {
     outline: none;
     border-color: #3d6dff;
   }
 
-  footer .inner>div form fieldset ul li input:focus::placeholder,
-  footer .inner>div form fieldset ul li textarea:focus::placeholder {
+  footer form fieldset ul li input:focus::placeholder,
+  footer form fieldset ul li textarea:focus::placeholder {
     opacity: 0;
   }
 
-  footer .inner>div form fieldset ul li button {
+  footer form fieldset ul li .view-button {
     cursor: pointer;
   }
 
   footer img {
-    object-fit: cover;
-    filter: brightness(0.7);
+    display: none;
   }
 
   footer .inner>div>div:last-of-type {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-  }
-
-  footer .inner>div>div:last-of-type h2 {
-    max-width: 200px;
-  }
-
-  footer .inner>div>div:last-of-type h2 a {
-    display: block;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
   }
 
   footer .inner>div>div:last-of-type h2 a img {
@@ -1382,18 +1368,20 @@ li {
   }
 
   footer .inner>div>div:last-of-type>div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  footer .inner>div>div:last-of-type>div p {
+    margin-bottom: 8px;
   }
 
   footer .inner>div>div:last-of-type>div ul {
     display: flex;
     align-items: center;
-    gap: 20px;
+    width: 180px;
+    margin: 20px auto 0;
+    justify-content: space-between;
   }
 
   footer .inner>div>div:last-of-type>div ul li {
@@ -1420,7 +1408,6 @@ li {
   footer .inner>div>div:last-of-type>div ul li:nth-child(3) {
     background-image: url("../images/tiktok.png");
     width: 16px;
-    /* height: 18px; */
   }
 
   footer .inner>div>div:last-of-type>div ul li:nth-child(4) {
@@ -1442,10 +1429,10 @@ li {
   footer .inner>p {
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
+    /* margin-bottom: 8px; */
     text-align: center;
-    margin-top: 50px;
   }
 }
 
@@ -1455,35 +1442,34 @@ li {
   .inner {
     width: 100%;
     margin: 0 auto;
-    padding: 40px 20px 30px;
+    padding: 80px 20px;
   }
 
   .logo {
-    /* height: 58px; */
+    display: inline-block;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 12px;
     font-weight: 700;
     color: #ffffff;
-    padding: 10px 20px;
-    border: 10px #ffffff solid;
-    border-left: 30px solid;
+    padding: 4px 8px;
+    border: 4px #ffffff solid;
+    border-left: 12px solid;
   }
 
   .title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 12px;
+    line-height: 22px;
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
   }
 
   .title::after {
     content: '';
-    width: 60px;
+    width: 40px;
     height: 1px;
-    margin-left: 20px;
+    margin-left: 16px;
     background-color: #0a0a0a;
     display: inline-block;
     /* ::after는 기본이 inline이라 크기 안 먹을 수 있음
@@ -1492,14 +1478,14 @@ li {
 
   .subtitle {
     display: block;
-    font-size: 32px;
-    line-height: 42px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 32px;
   }
 
   .desc {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 12px;
+    line-height: 22px;
   }
 
   .en {
@@ -1507,9 +1493,9 @@ li {
   }
 
   .view-button {
-    font-size: 16px;
-    line-height: 26px;
-    padding: 15px 20px;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 10px 14px;
     border: 1px #0a0a0a solid;
     /* display: inline-block; */
     /* a 태그를 버튼처럼 사용할 때는 거의 inline-block 국룰
@@ -1519,6 +1505,11 @@ li {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
+  }
+
+  .view-button .material-symbols-outlined {
+    font-size: 22px;
   }
 
   .view-button:hover {
@@ -1532,31 +1523,47 @@ li {
     top: 0;
     left: 0;
     width: 100%;
+    height: 76px;
     z-index: 100;
     background-color: #0a0a0a;
   }
 
   header .inner {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 20px;
-  }
-
-  header h1 {
-    max-width: 200px;
-  }
-
-  header h1 a {
-    display: block;
+    padding: 20px 20px;
   }
 
   header .menu-button {
-    display: block;
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  header .menu-button .material-symbols-outlined {
+    color: #fff;
+    font-size: 24px;
+    /* 필요하면 조절 */
   }
 
   header nav {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #0a0a0a;
+    padding: 16px 20px;
   }
 
   header nav.active {
@@ -1564,112 +1571,83 @@ li {
   }
 
   header nav ul {
-    /* display: flex;
-    gap: 65px; */
+    display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 4px;
     align-items: flex-start;
   }
 
+  header nav ul li {
+    width: 100%;
+  }
+
   header nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0;
+
+    width: 100%;
+    padding: 12px 0;
+
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 12px;
+    line-height: 22px;
     font-weight: 700;
     color: #ffffff;
   }
 
+  header nav ul li a::before {
+    content: "›";
+    opacity: 0;
+    width: 0;
+    transform: translateY(-2px);
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  header nav ul li a:hover::before,
+  header nav ul li a:focus::before {
+    opacity: 1;
+    width: 12px;
+  }
+
   /* ---------- VISUAL---------- */
   .visual {
-    height: 700px;
+    height: auto;
     background: #0a0a0a;
     overflow: hidden;
-    margin-top: 126px;
+    margin-top: 76px;
   }
 
   .visual .inner {
     display: flex;
-    width: 100%;
-    height: 100%;
-    padding: 0 20px;
-  }
-
-  .visual .inner>div:first-of-type {
-    flex: 1;
-    min-width: 0;
-    /* Swiper가 flex 영역에서 과도하게 확장되는 문제 방지 */
-    position: relative;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-left: 80px;
+    width: 100%;
+    padding: 0;
+    position: relative;
   }
 
-  .visual .inner>div:first-of-type h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 56px;
-    line-height: 76px;
-    color: #ffffff;
-  }
-
-  .visual .inner>div:first-of-type p {
-    font-size: 16px;
-    line-height: 36px;
-    color: #ffffff;
-  }
-
-  /* 번호 */
-  .visual .inner>div:first-of-type .slide_num {
-    position: absolute;
-    left: 0;
-  }
-
-  .visual .inner>div:first-of-type .slide_num li {
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 26px;
-    cursor: pointer;
-    opacity: 0.4;
-    transition: opacity 0.3s;
-  }
-
-  .visual .inner>div:first-of-type .slide_num li.on {
-    font-size: 32px;
-    line-height: 42px;
-    opacity: 1;
-  }
-
-  .visual .inner>div:first-of-type .slide_num li::before {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 60px;
-    background: #ffffff;
-    margin: 10px 0;
-  }
-
-  /* 스와이프 */
-  .visual .inner>div:last-of-type {
-    flex: 2;
-    min-width: 0;
-    /* Swiper가 flex 영역에서 과도하게 확장되는 문제 방지 */
-    height: 100%;
-    /* position: relative; */
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+  /* 이미지 */
+  .visual .inner>div:first-of-type {
+    order: 1;
+    margin-bottom: 16px;
   }
 
   .visual .swiper {
     width: 100%;
-    height: 100%;
-    /* position: relative; */
-    /* overflow: hidden; */
+    aspect-ratio: 16 / 9;
+  }
+
+  .visual .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .visual .swiper-slide img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
   }
@@ -1677,501 +1655,521 @@ li {
   .visual .gradient {
     position: absolute;
     inset: 0;
-    z-index: 2;
-
-    background: radial-gradient(ellipse 80% 80% at center,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0) 50%,
-        rgba(0, 0, 0, 1) 60%,
-        rgba(0, 0, 0, 1) 100%);
-  }
-
-  /* ---------- ABOUT US----------  */
-  .about {
-    background-color: #ffffff;
-    padding: 60px 60px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* 왼쪽 */
-  .about>div {
-    width: 330px;
-    flex-shrink: 0;
-    /* flex-shrink: 0;
-   남는 공간 있어도 늘어나지 않음
-   flex-shrink: 0;
-   화면이 줄어도 줄어들지 않음 
-   늘어나지 않음 | 줄어들지 않음 | 330px 고정
-    flex: 0 0 330px; */
-  }
-
-  /* 오른쪽 */
-  .about ul {
-    width: 660px;
-    display: flex;
-  }
-
-  .about ul li {
-    flex: 1;
-  }
-
-  .about ul li:first-of-type,
-  .about ul li:nth-of-type(2) {
-    width: calc(100% - 60px);
-    padding-right: 55px;
-    margin-right: 55px;
-  }
-
-  .about ul li:not(:last-of-type) {
-    border-right: 1px #0a0a0a solid;
-  }
-
-  .about ul li strong {
-    display: block;
-    font-size: 32px;
-    margin-bottom: 30px;
-  }
-
-  .about ul li span {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  /* ---------- PROJECT----------  */
-  .project {
-    background-color: #0a0a0a;
-    padding: 60px 20px 50px;
-  }
-
-  .project .inner {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* 왼쪽 */
-  .project .inner>div {
-    width: 255px;
-    margin-right: 20px;
-    flex-shrink: 0;
-    /* flex-shrink: 0;
-   남는 공간 있어도 늘어나지 않음
-   flex-shrink: 0;
-   화면이 줄어도 줄어들지 않음 
-   늘어나지 않음 | 줄어들지 않음 | 255px 고정
-    flex: 0 0 255px; */
-    display: flex;
-    flex-direction: column;
-    /* 링크를 하단으로 배치하기 위해 세로 정렬 */
-    color: #ffffff;
-  }
-
-  .project .inner>div h2::after {
-    background-color: #ffffff;
-  }
-
-  .project .inner>div a {
-    margin-top: auto;
-    /* 링크를 영역 하단으로 배치 */
-    border-color: #ffffff;
-    color: #ffffff;
-  }
-
-  /* 오른쪽 */
-  .project .inner ul {
-    width: 1030px;
-    display: flex;
-    gap: 10px;
-  }
-
-  .project .inner ul li {
-    flex: 1;
-  }
-
-  .project ul li figure img {
-    width: 100%;
-    display: block;
-    /* 이미지 아래에 생기는 이상한 여백 제거 */
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-
-  .project ul li figure figcaption strong {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-
-  .project ul li figure figcaption p {
-    font-size: 16px;
-    line-height: 26px;
-    color: #ffffff;
-  }
-
-  /* ---------- PROJECT DETAIL----------  */
-  .detail {
-    background-color: #ffffff;
-    padding: 60px 60px 50px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* 왼쪽 */
-  .detail>div:first-of-type {
-    width: 330px;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    /* flex-shrink: 0;
-   남는 공간 있어도 늘어나지 않음
-   flex-shrink: 0;
-   화면이 줄어도 줄어들지 않음 
-   늘어나지 않음 | 줄어들지 않음 | 330px 고정
-    flex: 0 0 330px; */
-    margin-right: 20px;
-  }
-
-  .detail>div:first-of-type dl {
-    font-size: 16px;
-    line-height: 26px;
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    margin-bottom: 20px;
-  }
-
-  .detail>div:first-of-type dl dt,
-  .detail>div:first-of-type dl dd {
-    padding: 10px 0px;
-    margin: 0;
-    border-bottom: 1px #0a0a0a solid;
-  }
-
-  .detail>div:first-of-type a {
-    margin-top: auto;
-  }
-
-  /* 오른쪽 */
-  /* 모달 */
-  .detail .modal {
-    display: none;
-    position: fixed;
-    /* 화면 기준으로 고정 */
-    inset: 0;
     /* top: 0; right: 0; bottom: 0; left: 0; 한 번에 쓴 것*/
-    background: rgba(10, 10, 10, 0.8);
-    justify-content: center;
-    align-items: center;
-    /* 정가운데 배치 */
-    z-index: 100;
+    z-index: 2;
+    aspect-ratio: 16 / 9;
+    pointer-events: none;
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, .95) 0%,
+        rgba(0, 0, 0, .7) 25%,
+        rgba(0, 0, 0, .3) 50%,
+        rgba(0, 0, 0, 0) 75%);
   }
 
-  .detail .modal.on {
-    display: flex;
-  }
+    /* 번호 */
+    .visual .inner .slide_num {
+      /* position: absolute; */
+      /* right: 40px;
+      bottom: 40px; */
+      padding-right: 20px;
+      margin-bottom: 40px;
+      order: 3;
+      z-index: 4;
+      display: flex;
+      gap: 12px;
+      justify-content: end;
+    }
 
-  .detail .modal img {
-    width: 66.666%;
-    /* = 2/3 */
-    max-width: 900px;
-    /* 너무 커지는 것 방지 */
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    display: block;
-  }
+    .visual .inner .slide_num li {
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 22px;
+      cursor: pointer;
+      opacity: 0.4;
+      transition: opacity 0.3s;
+    }
 
-  .detail .modal .close {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    background: none;
-    border: 0;
-    cursor: pointer;
-  }
+    .visual .inner .slide_num li.on {
+      opacity: 1;
+    }
 
-  .detail .modal .close .material-symbols-outlined {
-    color: #fff;
-  }
+    .visual .inner .slide_num li::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #ffffff;
+    }
 
-  .detail>div:last-of-type {
-    width: 950px;
-  }
+    /* 텍스트 */
+    .visual .inner>div:last-of-type {
+      /* position: absolute; */
+      order: 2;
+      width: 260px;
+      /* left: 40px;
+      bottom: 50px; */
+      padding-left: 20px;
+      margin-bottom: 20px;
+      z-index: 3;
+    }
 
-  .detail>div:last-of-type figure img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    aspect-ratio: 4 / 1;
-    object-fit: cover;
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
+    .visual .inner>div:last-of-type h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      line-height: 48px;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
 
-  .detail>div:last-of-type ul {
-    width: 100%;
-    display: flex;
-    gap: 10px;
-  }
+    .visual .inner>div:last-of-type p {
+      font-size: 12px;
+      line-height: 22px;
+      color: #ffffff;
+    }
 
-  .detail>div:last-of-type ul li {
-    flex: 1;
-  }
+    /* ---------- ABOUT US----------  */
+    .about {
+      background-color: #ffffff;
+    }
 
-  .detail>div:last-of-type ul li strong {
-    display: block;
-    border: 1px #0a0a0a solid;
-    padding: 10px;
-  }
+    /* 왼쪽 */
+    .about>div {
+      margin-bottom: 40px;
+    }
 
-  .detail>div:last-of-type ul li img {
-    width: 100%;
-    display: block;
-    /* 이미지 아래에 생기는 이상한 여백 제거 */
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    overflow: hidden;
-    border: 1px #0a0a0a solid;
-    border-top: 0px;
-    padding: 10px;
-    cursor: pointer;
-  }
+    /* 오른쪽 */
+    .about ul {
+      display: flex;
+    }
 
-  /* ---------- OUR PROCESS----------  */
-  .process {
-    background-color: #ffffff;
-    padding: 60px 60px 50px;
-  }
+    .about ul li {
+      flex: 1;
+    }
 
-  .process>h2,
-  .process>b {
-    width: 330px;
-  }
+    .about ul li:first-of-type,
+    .about ul li:nth-of-type(2) {
+      width: calc(100% - 40px);
+      margin-right: 12px;
+      padding-right: 12px;
+    }
 
-  .process ul {
-    display: flex;
-    justify-content: space-between;
-  }
+    .about ul li:not(:last-of-type) {
+      border-right: 1px #0a0a0a solid;
+    }
 
-  .process li {
-    border: 1px #0a0a0a solid;
-    width: 185px;
-    padding: 25px;
-    text-align: center;
-  }
+    .about ul li strong {
+      display: block;
+      font-size: 24px;
+      line-height: 34px;
+      margin-bottom: 16px;
+    }
 
-  .process .process-icon {
-    display: block;
-    font-size: 50px;
-    margin-bottom: 20px;
-    font-variation-settings:
-      'FILL' 0,
-      'wght' 300,
-      'GRAD' 0,
-      'opsz' 48;
-  }
+    .about ul li span {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      line-height: 22px;
+    }
 
-  .process strong {
-    display: block;
-    font-size: 16px;
-    line-height: 26px;
-  }
+    /* ---------- PROJECT----------  */
+    .project {
+      background-color: #0a0a0a;
+    }
 
-  .process ul li b {
-    display: block;
-    font-size: 16px;
-    line-height: 26px;
-  }
+    .project .inner {
+      padding: 80px 20px;
+    }
 
-  .process p {
-    font-size: 16px;
-    line-height: 26px;
-  }
+    /* 왼쪽 */
+    .project .inner>div {
+      color: #ffffff;
+      /* margin-bottom: 25px; */
+    }
 
-  /* ---------- footer----------  */
-  footer {
-    background-color: #0a0a0a;
-    padding: 60px 20px 50px;
-  }
+    .project .inner>div h2::after {
+      background-color: #ffffff;
+    }
 
-  footer .inner>div {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    color: #ffffff;
-  }
+    .project .inner>div a {
+      border-color: #ffffff;
+      color: #ffffff;
+      width: 100%;
+      margin-bottom: 24px;
+    }
 
-  footer .inner>div div,
-  footer .inner>div img {
-    width: 300px;
-  }
+    /* 오른쪽 */
+    .project .inner ul {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
 
-  footer .inner>div h2::after {
-    background-color: #ffffff;
-  }
+    .project ul li figure img {
+      width: 100%;
+      display: block;
+      /* 이미지 아래에 생기는 이상한 여백 제거 */
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
 
-  /* 두번째 */
-  footer .inner>div form fieldset legend,
-  footer .inner>div form fieldset ul li label {
-    /* 시각적으로는 숨기지만 스크린 리더는 읽을 수 있도록 접근성을 위해 사용*/
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-  }
+    .project ul li figure figcaption strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      line-height: 22px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
 
-  footer .inner>div form fieldset ul {
-    display: flex;
-    flex-wrap: wrap;
-    /* 공간이 부족하면 다음 줄로 배치 */
-    gap: 10px;
-  }
+    .project ul li figure figcaption p {
+      font-size: 12px;
+      line-height: 22px;
+      color: #ffffff;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 
-  footer .inner>div form fieldset ul li:first-of-type,
-  footer .inner>div form fieldset ul li:nth-of-type(2) {
-    width: calc((100% - 10px) / 2);
-  }
+    /* ---------- PROJECT DETAIL----------  */
+    .detail {
+      background-color: #ffffff;
+    }
 
-  footer .inner>div form li:nth-child(3),
-  footer .inner>div form li:nth-child(4),
-  footer .inner>div form li:nth-child(5) {
-    width: 100%;
-  }
+    /* 왼쪽 */
+    .detail>div:first-of-type {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      /* flex-shrink: 0;
+   남는 공간 있어도 늘어나지 않음*/
+      margin-bottom: 24px;
+    }
 
-  footer .inner>div form fieldset ul li input,
-  footer .inner>div form fieldset ul li textarea,
-  footer .inner>div form fieldset ul li button {
-    width: 100%;
-    color: #ffffff;
-    background-color: transparent;
-    border: 1px solid #ffffff;
-  }
+    .detail>div:first-of-type dl {
+      font-size: 12px;
+      line-height: 22px;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      margin-bottom: 24px;
+    }
 
-  footer .inner>div form fieldset ul li input::placeholder,
-  footer .inner>div form fieldset ul li textarea::placeholder {
-    color: #ffffff;
-  }
+    .detail>div:first-of-type dl dt,
+    .detail>div:first-of-type dl dd {
+      padding: 8px 0px;
+      margin: 0;
+      border-bottom: 1px #0a0a0a solid;
+    }
 
-  footer .inner>div form fieldset ul li input,
-  footer .inner>div form fieldset ul li textarea,
-  footer .inner>div form fieldset ul li button {
-    font: inherit;
-    font-size: 16px;
-    line-height: 26px;
-    padding: 15px 20px;
-  }
+    .detail>div:first-of-type a {
+      margin-top: auto;
+    }
 
-  footer .inner>div form fieldset ul li input:focus,
-  footer .inner>div form fieldset ul li textarea:focus {
-    outline: none;
-    border-color: #3d6dff;
-  }
+    /* 오른쪽 */
+    /* 모달 */
+    .detail .modal {
+      display: none;
+      position: fixed;
+      /* 화면 기준으로 고정 */
+      inset: 0;
+      /* top: 0; right: 0; bottom: 0; left: 0; 한 번에 쓴 것*/
+      background: rgba(10, 10, 10, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
 
-  footer .inner>div form fieldset ul li input:focus::placeholder,
-  footer .inner>div form fieldset ul li textarea:focus::placeholder {
-    opacity: 0;
-  }
+    .detail .modal.on {
+      display: flex;
+    }
 
-  footer .inner>div form fieldset ul li button {
-    cursor: pointer;
-  }
+    .detail .modal img {
+      width: 90%;
+      max-width: 900px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
 
-  footer img {
-    object-fit: cover;
-    filter: brightness(0.7);
-  }
+    .detail .modal .close {
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
 
-  footer .inner>div>div:last-of-type {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+    .detail .modal .close .material-symbols-outlined {
+      color: #fff;
+    }
 
-  footer .inner>div>div:last-of-type h2 {
-    max-width: 200px;
-  }
+    .detail>div:last-of-type figure img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
 
-  footer .inner>div>div:last-of-type h2 a {
-    display: block;
-  }
+    .detail>div:last-of-type ul {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
 
-  footer .inner>div>div:last-of-type h2 a img {
-    width: 100%;
-    display: block;
-  }
+    .detail>div:last-of-type ul li {
+      flex: 1;
+    }
 
-  footer .inner>div>div:last-of-type>div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 16px;
-    line-height: 26px;
-  }
+    .detail>div:last-of-type ul li strong {
+      display: block;
+      border: 1px #0a0a0a solid;
+      padding: 8px 12px;
+      font-size: 12px;
+      line-height: 22px;
+    }
 
-  footer .inner>div>div:last-of-type>div ul {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
+    .detail>div:last-of-type ul li img {
+      width: 100%;
+      display: block;
+      /* 이미지 아래에 생기는 이상한 여백 제거 */
+      aspect-ratio: 16/ 9;
+      object-fit: cover;
+      overflow: hidden;
+      border: 1px #0a0a0a solid;
+      border-top: 0px;
+      padding: 8px;
+      cursor: pointer;
+    }
 
-  footer .inner>div>div:last-of-type>div ul li {
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-  }
+    /* ---------- OUR PROCESS----------  */
+    .process {
+      background-color: #ffffff;
+      border-top: 1px solid #ddd;
+    }
 
-  footer .inner>div>div:last-of-type>div ul li:not(:nth-child(2)):not(:nth-child(3)) {
-    width: 16px;
-    height: 16px;
-  }
+    .process ul {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
 
-  footer .inner>div>div:last-of-type>div ul li:first-child {
-    background-image: url("../images/instagram.png");
-  }
+    .process li {
+      border: 1px #0a0a0a solid;
+      padding: 16px;
+      text-align: center;
+    }
 
-  footer .inner>div>div:last-of-type>div ul li:nth-child(2) {
-    background-image: url("../images/youtube.png");
-    width: 18px;
-  }
+    .process .process-icon {
+      display: block;
+      font-size: 40px;
+      margin-bottom: 12px;
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 48;
+    }
 
-  footer .inner>div>div:last-of-type>div ul li:nth-child(3) {
-    background-image: url("../images/tiktok.png");
-    width: 16px;
-    /* height: 18px; */
-  }
+    .process ul li strong {
+      display: block;
+      font-size: 12px;
+      line-height: 22px;
+      opacity: .6;
+      margin-bottom: 6px;
+    }
 
-  footer .inner>div>div:last-of-type>div ul li:nth-child(4) {
-    background-image: url("../images/twitter.png");
+    .process ul li b {
+      display: block;
+      font-size: 12px;
+      line-height: 22px;
+      margin-bottom: 8px;
+    }
 
-  }
+    .process ul li p {
+      font-size: 12px;
+      line-height: 22px;
+    }
 
-  footer .inner>div>div:last-of-type>div ul li:last-child {
-    background-image: url("../images/pinterest.png");
-  }
+    /* ---------- footer----------  */
+    footer {
+      background-color: #0a0a0a;
+    }
 
-  footer .inner>div>div:last-of-type>div ul li a {
-    display: block;
-    text-indent: -9999px;
-    width: 100%;
-    height: 20px;
-  }
+    footer .inner {
+      padding: 40px 20px;
+    }
 
-  footer .inner>p {
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 26px;
-    text-align: center;
-    margin-top: 50px;
+    footer .inner>div {
+      color: #ffffff;
+      margin-bottom: 32px;
+    }
+
+    footer .inner>div div:first-of-type h2::after {
+      background-color: #ffffff;
+    }
+
+    footer .inner>div div:first-of-type .desc {
+      margin-bottom: 30px;
+    }
+
+    /* 두번째 */
+    footer form {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    footer form fieldset legend,
+    footer form fieldset ul li label {
+      /* 시각적으로는 숨기지만 스크린 리더는 읽을 수 있도록 접근성을 위해 사용*/
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    footer form fieldset ul {
+      display: flex;
+      flex-wrap: wrap;
+      /* 공간이 부족하면 다음 줄로 배치 */
+      gap: 12px;
+    }
+
+    /* footer .inner>div form fieldset ul li:first-of-type,
+  footer form fieldset ul li:nth-of-type(2) {
+    width: calc((100% - 16px) / 2);
+  } */
+
+    footer form li {
+      width: 100%;
+    }
+
+    footer form fieldset ul li input,
+    footer form fieldset ul li textarea,
+    footer form fieldset ul li .view-button {
+      width: 100%;
+      color: #ffffff;
+      background-color: transparent;
+      border: 1px solid #ffffff;
+    }
+
+    footer form fieldset ul li input::placeholder,
+    footer form fieldset ul li textarea::placeholder {
+      color: #ffffff;
+    }
+
+    footer form fieldset ul li input,
+    footer form fieldset ul li textarea,
+    footer form fieldset ul li .view-button {
+      font: inherit;
+      font-size: 12px;
+      line-height: 22px;
+      padding: 12px 16px;
+    }
+
+    footer form fieldset ul li input:focus,
+    footer form fieldset ul li textarea:focus {
+      outline: none;
+      border-color: #3d6dff;
+    }
+
+    footer form fieldset ul li input:focus::placeholder,
+    footer form fieldset ul li textarea:focus::placeholder {
+      opacity: 0;
+    }
+
+    footer form fieldset ul li .view-button {
+      cursor: pointer;
+    }
+
+    footer img {
+      display: none;
+    }
+
+    footer .inner>div>div:last-of-type {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      align-items: center;
+    }
+
+    footer .inner>div>div:last-of-type h2 a img {
+      width: 100%;
+      display: block;
+    }
+
+    footer .inner>div>div:last-of-type>div {
+      font-size: 12px;
+      line-height: 22px;
+    }
+
+    footer .inner>div>div:last-of-type>div p {
+      margin-bottom: 8px;
+    }
+
+    footer .inner>div>div:last-of-type>div ul {
+      display: flex;
+      align-items: center;
+      width: 160px;
+      margin: 16px auto 0;
+      justify-content: space-between;
+    }
+
+    footer .inner>div>div:last-of-type>div ul li {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+
+    footer .inner>div>div:last-of-type>div ul li:not(:nth-child(2)):not(:nth-child(3)) {
+      width: 16px;
+      height: 16px;
+    }
+
+    footer .inner>div>div:last-of-type>div ul li:first-child {
+      background-image: url("../images/instagram.png");
+    }
+
+    footer .inner>div>div:last-of-type>div ul li:nth-child(2) {
+      background-image: url("../images/youtube.png");
+      width: 18px;
+    }
+
+    footer .inner>div>div:last-of-type>div ul li:nth-child(3) {
+      background-image: url("../images/tiktok.png");
+      width: 16px;
+    }
+
+    footer .inner>div>div:last-of-type>div ul li:nth-child(4) {
+      background-image: url("../images/twitter.png");
+
+    }
+
+    footer .inner>div>div:last-of-type>div ul li:last-child {
+      background-image: url("../images/pinterest.png");
+    }
+
+    footer .inner>div>div:last-of-type>div ul li a {
+      display: block;
+      text-indent: -9999px;
+      width: 100%;
+      height: 20px;
+    }
+
+    footer .inner>p {
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      line-height: 22px;
+      /* margin-bottom: 8px; */
+      text-align: center;
+    }
   }
-}
