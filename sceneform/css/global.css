@@ -7,6 +7,7 @@
 body {
   background-color: #ffffff;
   font-family: 'Noto Sans KR', sans-serif;
+  color: #222222;
 }
 
 a {
@@ -1666,510 +1667,510 @@ li {
         rgba(0, 0, 0, 0) 75%);
   }
 
-    /* 번호 */
-    .visual .inner .slide_num {
-      /* position: absolute; */
-      /* right: 40px;
+  /* 번호 */
+  .visual .inner .slide_num {
+    /* position: absolute; */
+    /* right: 40px;
       bottom: 40px; */
-      padding-right: 20px;
-      margin-bottom: 40px;
-      order: 3;
-      z-index: 4;
-      display: flex;
-      gap: 12px;
-      justify-content: end;
-    }
+    padding-right: 20px;
+    margin-bottom: 40px;
+    order: 3;
+    z-index: 4;
+    display: flex;
+    gap: 12px;
+    justify-content: end;
+  }
 
-    .visual .inner .slide_num li {
-      color: #ffffff;
-      font-size: 12px;
-      line-height: 22px;
-      cursor: pointer;
-      opacity: 0.4;
-      transition: opacity 0.3s;
-    }
+  .visual .inner .slide_num li {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 22px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
 
-    .visual .inner .slide_num li.on {
-      opacity: 1;
-    }
+  .visual .inner .slide_num li.on {
+    opacity: 1;
+  }
 
-    .visual .inner .slide_num li::before {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 1px;
-      background: #ffffff;
-    }
+  .visual .inner .slide_num li::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #ffffff;
+  }
 
-    /* 텍스트 */
-    .visual .inner>div:last-of-type {
-      /* position: absolute; */
-      order: 2;
-      width: 260px;
-      /* left: 40px;
+  /* 텍스트 */
+  .visual .inner>div:last-of-type {
+    /* position: absolute; */
+    order: 2;
+    width: 260px;
+    /* left: 40px;
       bottom: 50px; */
-      padding-left: 20px;
-      margin-bottom: 20px;
-      z-index: 3;
-    }
+    padding-left: 20px;
+    margin-bottom: 20px;
+    z-index: 3;
+  }
 
-    .visual .inner>div:last-of-type h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 36px;
-      line-height: 48px;
-      color: #ffffff;
-      margin-bottom: 16px;
-    }
+  .visual .inner>div:last-of-type h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    line-height: 48px;
+    color: #ffffff;
+    margin-bottom: 16px;
+  }
 
-    .visual .inner>div:last-of-type p {
-      font-size: 12px;
-      line-height: 22px;
-      color: #ffffff;
-    }
+  .visual .inner>div:last-of-type p {
+    font-size: 12px;
+    line-height: 22px;
+    color: #ffffff;
+  }
 
-    /* ---------- ABOUT US----------  */
-    .about {
-      background-color: #ffffff;
-    }
+  /* ---------- ABOUT US----------  */
+  .about {
+    background-color: #ffffff;
+  }
 
-    /* 왼쪽 */
-    .about>div {
-      margin-bottom: 40px;
-    }
+  /* 왼쪽 */
+  .about>div {
+    margin-bottom: 40px;
+  }
 
-    /* 오른쪽 */
-    .about ul {
-      display: flex;
-    }
+  /* 오른쪽 */
+  .about ul {
+    display: flex;
+  }
 
-    .about ul li {
-      flex: 1;
-    }
+  .about ul li {
+    flex: 1;
+  }
 
-    .about ul li:first-of-type,
-    .about ul li:nth-of-type(2) {
-      width: calc(100% - 40px);
-      margin-right: 12px;
-      padding-right: 12px;
-    }
+  .about ul li:first-of-type,
+  .about ul li:nth-of-type(2) {
+    width: calc(100% - 40px);
+    margin-right: 12px;
+    padding-right: 12px;
+  }
 
-    .about ul li:not(:last-of-type) {
-      border-right: 1px #0a0a0a solid;
-    }
+  .about ul li:not(:last-of-type) {
+    border-right: 1px #0a0a0a solid;
+  }
 
-    .about ul li strong {
-      display: block;
-      font-size: 24px;
-      line-height: 34px;
-      margin-bottom: 16px;
-    }
+  .about ul li strong {
+    display: block;
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 16px;
+  }
 
-    .about ul li span {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      line-height: 22px;
-    }
+  .about ul li span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+  }
 
-    /* ---------- PROJECT----------  */
-    .project {
-      background-color: #0a0a0a;
-    }
+  /* ---------- PROJECT----------  */
+  .project {
+    background-color: #0a0a0a;
+  }
 
-    .project .inner {
-      padding: 80px 20px;
-    }
+  .project .inner {
+    padding: 80px 20px;
+  }
 
-    /* 왼쪽 */
-    .project .inner>div {
-      color: #ffffff;
-      /* margin-bottom: 25px; */
-    }
+  /* 왼쪽 */
+  .project .inner>div {
+    color: #ffffff;
+    /* margin-bottom: 25px; */
+  }
 
-    .project .inner>div h2::after {
-      background-color: #ffffff;
-    }
+  .project .inner>div h2::after {
+    background-color: #ffffff;
+  }
 
-    .project .inner>div a {
-      border-color: #ffffff;
-      color: #ffffff;
-      width: 100%;
-      margin-bottom: 24px;
-    }
+  .project .inner>div a {
+    border-color: #ffffff;
+    color: #ffffff;
+    width: 100%;
+    margin-bottom: 24px;
+  }
 
-    /* 오른쪽 */
-    .project .inner ul {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 16px;
-    }
+  /* 오른쪽 */
+  .project .inner ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
 
-    .project ul li figure img {
-      width: 100%;
-      display: block;
-      /* 이미지 아래에 생기는 이상한 여백 제거 */
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      overflow: hidden;
-      margin-bottom: 10px;
-    }
+  .project ul li figure img {
+    width: 100%;
+    display: block;
+    /* 이미지 아래에 생기는 이상한 여백 제거 */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
 
-    .project ul li figure figcaption strong {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      line-height: 22px;
-      color: #ffffff;
-      margin-bottom: 8px;
-    }
+  .project ul li figure figcaption strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
 
-    .project ul li figure figcaption p {
-      font-size: 12px;
-      line-height: 22px;
-      color: #ffffff;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
+  .project ul li figure figcaption p {
+    font-size: 12px;
+    line-height: 22px;
+    color: #ffffff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 
-    /* ---------- PROJECT DETAIL----------  */
-    .detail {
-      background-color: #ffffff;
-    }
+  /* ---------- PROJECT DETAIL----------  */
+  .detail {
+    background-color: #ffffff;
+  }
 
-    /* 왼쪽 */
-    .detail>div:first-of-type {
-      display: flex;
-      flex-direction: column;
-      flex-shrink: 0;
-      /* flex-shrink: 0;
+  /* 왼쪽 */
+  .detail>div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    /* flex-shrink: 0;
    남는 공간 있어도 늘어나지 않음*/
-      margin-bottom: 24px;
-    }
+    margin-bottom: 24px;
+  }
 
-    .detail>div:first-of-type dl {
-      font-size: 12px;
-      line-height: 22px;
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      margin-bottom: 24px;
-    }
+  .detail>div:first-of-type dl {
+    font-size: 12px;
+    line-height: 22px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    margin-bottom: 24px;
+  }
 
-    .detail>div:first-of-type dl dt,
-    .detail>div:first-of-type dl dd {
-      padding: 8px 0px;
-      margin: 0;
-      border-bottom: 1px #0a0a0a solid;
-    }
+  .detail>div:first-of-type dl dt,
+  .detail>div:first-of-type dl dd {
+    padding: 8px 0px;
+    margin: 0;
+    border-bottom: 1px #0a0a0a solid;
+  }
 
-    .detail>div:first-of-type a {
-      margin-top: auto;
-    }
+  .detail>div:first-of-type a {
+    margin-top: auto;
+  }
 
-    /* 오른쪽 */
-    /* 모달 */
-    .detail .modal {
-      display: none;
-      position: fixed;
-      /* 화면 기준으로 고정 */
-      inset: 0;
-      /* top: 0; right: 0; bottom: 0; left: 0; 한 번에 쓴 것*/
-      background: rgba(10, 10, 10, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 100;
-    }
+  /* 오른쪽 */
+  /* 모달 */
+  .detail .modal {
+    display: none;
+    position: fixed;
+    /* 화면 기준으로 고정 */
+    inset: 0;
+    /* top: 0; right: 0; bottom: 0; left: 0; 한 번에 쓴 것*/
+    background: rgba(10, 10, 10, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
 
-    .detail .modal.on {
-      display: flex;
-    }
+  .detail .modal.on {
+    display: flex;
+  }
 
-    .detail .modal img {
-      width: 90%;
-      max-width: 900px;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-    }
+  .detail .modal img {
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
 
-    .detail .modal .close {
-      position: absolute;
-      top: 40px;
-      right: 20px;
-      background: none;
-      border: 0;
-      cursor: pointer;
-    }
+  .detail .modal .close {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
 
-    .detail .modal .close .material-symbols-outlined {
-      color: #fff;
-    }
+  .detail .modal .close .material-symbols-outlined {
+    color: #fff;
+  }
 
-    .detail>div:last-of-type figure img {
-      width: 100%;
-      height: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      overflow: hidden;
-      margin-bottom: 16px;
-    }
+  .detail>div:last-of-type figure img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
 
-    .detail>div:last-of-type ul {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 16px;
-    }
+  .detail>div:last-of-type ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
 
-    .detail>div:last-of-type ul li {
-      flex: 1;
-    }
+  .detail>div:last-of-type ul li {
+    flex: 1;
+  }
 
-    .detail>div:last-of-type ul li strong {
-      display: block;
-      border: 1px #0a0a0a solid;
-      padding: 8px 12px;
-      font-size: 12px;
-      line-height: 22px;
-    }
+  .detail>div:last-of-type ul li strong {
+    display: block;
+    border: 1px #0a0a0a solid;
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 22px;
+  }
 
-    .detail>div:last-of-type ul li img {
-      width: 100%;
-      display: block;
-      /* 이미지 아래에 생기는 이상한 여백 제거 */
-      aspect-ratio: 16/ 9;
-      object-fit: cover;
-      overflow: hidden;
-      border: 1px #0a0a0a solid;
-      border-top: 0px;
-      padding: 8px;
-      cursor: pointer;
-    }
+  .detail>div:last-of-type ul li img {
+    width: 100%;
+    display: block;
+    /* 이미지 아래에 생기는 이상한 여백 제거 */
+    aspect-ratio: 16/ 9;
+    object-fit: cover;
+    overflow: hidden;
+    border: 1px #0a0a0a solid;
+    border-top: 0px;
+    padding: 8px;
+    cursor: pointer;
+  }
 
-    /* ---------- OUR PROCESS----------  */
-    .process {
-      background-color: #ffffff;
-      border-top: 1px solid #ddd;
-    }
+  /* ---------- OUR PROCESS----------  */
+  .process {
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+  }
 
-    .process ul {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 16px;
-    }
+  .process ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
 
-    .process li {
-      border: 1px #0a0a0a solid;
-      padding: 16px;
-      text-align: center;
-    }
+  .process li {
+    border: 1px #0a0a0a solid;
+    padding: 16px;
+    text-align: center;
+  }
 
-    .process .process-icon {
-      display: block;
-      font-size: 40px;
-      margin-bottom: 12px;
-      font-variation-settings:
-        'FILL' 0,
-        'wght' 300,
-        'GRAD' 0,
-        'opsz' 48;
-    }
+  .process .process-icon {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 12px;
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 300,
+      'GRAD' 0,
+      'opsz' 48;
+  }
 
-    .process ul li strong {
-      display: block;
-      font-size: 12px;
-      line-height: 22px;
-      opacity: .6;
-      margin-bottom: 6px;
-    }
+  .process ul li strong {
+    display: block;
+    font-size: 12px;
+    line-height: 22px;
+    opacity: .6;
+    margin-bottom: 6px;
+  }
 
-    .process ul li b {
-      display: block;
-      font-size: 12px;
-      line-height: 22px;
-      margin-bottom: 8px;
-    }
+  .process ul li b {
+    display: block;
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 8px;
+  }
 
-    .process ul li p {
-      font-size: 12px;
-      line-height: 22px;
-    }
+  .process ul li p {
+    font-size: 12px;
+    line-height: 22px;
+  }
 
-    /* ---------- footer----------  */
-    footer {
-      background-color: #0a0a0a;
-    }
+  /* ---------- footer----------  */
+  footer {
+    background-color: #0a0a0a;
+  }
 
-    footer .inner {
-      padding: 40px 20px;
-    }
+  footer .inner {
+    padding: 40px 20px;
+  }
 
-    footer .inner>div {
-      color: #ffffff;
-      margin-bottom: 32px;
-    }
+  footer .inner>div {
+    color: #ffffff;
+    margin-bottom: 32px;
+  }
 
-    footer .inner>div div:first-of-type h2::after {
-      background-color: #ffffff;
-    }
+  footer .inner>div div:first-of-type h2::after {
+    background-color: #ffffff;
+  }
 
-    footer .inner>div div:first-of-type .desc {
-      margin-bottom: 30px;
-    }
+  footer .inner>div div:first-of-type .desc {
+    margin-bottom: 30px;
+  }
 
-    /* 두번째 */
-    footer form {
-      width: 100%;
-      margin-bottom: 30px;
-    }
+  /* 두번째 */
+  footer form {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 
-    footer form fieldset legend,
-    footer form fieldset ul li label {
-      /* 시각적으로는 숨기지만 스크린 리더는 읽을 수 있도록 접근성을 위해 사용*/
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-    }
+  footer form fieldset legend,
+  footer form fieldset ul li label {
+    /* 시각적으로는 숨기지만 스크린 리더는 읽을 수 있도록 접근성을 위해 사용*/
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
 
-    footer form fieldset ul {
-      display: flex;
-      flex-wrap: wrap;
-      /* 공간이 부족하면 다음 줄로 배치 */
-      gap: 12px;
-    }
+  footer form fieldset ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* 공간이 부족하면 다음 줄로 배치 */
+    gap: 12px;
+  }
 
-    /* footer .inner>div form fieldset ul li:first-of-type,
+  /* footer .inner>div form fieldset ul li:first-of-type,
   footer form fieldset ul li:nth-of-type(2) {
     width: calc((100% - 16px) / 2);
   } */
 
-    footer form li {
-      width: 100%;
-    }
-
-    footer form fieldset ul li input,
-    footer form fieldset ul li textarea,
-    footer form fieldset ul li .view-button {
-      width: 100%;
-      color: #ffffff;
-      background-color: transparent;
-      border: 1px solid #ffffff;
-    }
-
-    footer form fieldset ul li input::placeholder,
-    footer form fieldset ul li textarea::placeholder {
-      color: #ffffff;
-    }
-
-    footer form fieldset ul li input,
-    footer form fieldset ul li textarea,
-    footer form fieldset ul li .view-button {
-      font: inherit;
-      font-size: 12px;
-      line-height: 22px;
-      padding: 12px 16px;
-    }
-
-    footer form fieldset ul li input:focus,
-    footer form fieldset ul li textarea:focus {
-      outline: none;
-      border-color: #3d6dff;
-    }
-
-    footer form fieldset ul li input:focus::placeholder,
-    footer form fieldset ul li textarea:focus::placeholder {
-      opacity: 0;
-    }
-
-    footer form fieldset ul li .view-button {
-      cursor: pointer;
-    }
-
-    footer img {
-      display: none;
-    }
-
-    footer .inner>div>div:last-of-type {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      text-align: center;
-      align-items: center;
-    }
-
-    footer .inner>div>div:last-of-type h2 a img {
-      width: 100%;
-      display: block;
-    }
-
-    footer .inner>div>div:last-of-type>div {
-      font-size: 12px;
-      line-height: 22px;
-    }
-
-    footer .inner>div>div:last-of-type>div p {
-      margin-bottom: 8px;
-    }
-
-    footer .inner>div>div:last-of-type>div ul {
-      display: flex;
-      align-items: center;
-      width: 160px;
-      margin: 16px auto 0;
-      justify-content: space-between;
-    }
-
-    footer .inner>div>div:last-of-type>div ul li {
-      display: inline-block;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-    }
-
-    footer .inner>div>div:last-of-type>div ul li:not(:nth-child(2)):not(:nth-child(3)) {
-      width: 16px;
-      height: 16px;
-    }
-
-    footer .inner>div>div:last-of-type>div ul li:first-child {
-      background-image: url("../images/instagram.png");
-    }
-
-    footer .inner>div>div:last-of-type>div ul li:nth-child(2) {
-      background-image: url("../images/youtube.png");
-      width: 18px;
-    }
-
-    footer .inner>div>div:last-of-type>div ul li:nth-child(3) {
-      background-image: url("../images/tiktok.png");
-      width: 16px;
-    }
-
-    footer .inner>div>div:last-of-type>div ul li:nth-child(4) {
-      background-image: url("../images/twitter.png");
-
-    }
-
-    footer .inner>div>div:last-of-type>div ul li:last-child {
-      background-image: url("../images/pinterest.png");
-    }
-
-    footer .inner>div>div:last-of-type>div ul li a {
-      display: block;
-      text-indent: -9999px;
-      width: 100%;
-      height: 20px;
-    }
-
-    footer .inner>p {
-      color: #ffffff;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      line-height: 22px;
-      /* margin-bottom: 8px; */
-      text-align: center;
-    }
+  footer form li {
+    width: 100%;
   }
+
+  footer form fieldset ul li input,
+  footer form fieldset ul li textarea,
+  footer form fieldset ul li .view-button {
+    width: 100%;
+    color: #ffffff;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+  }
+
+  footer form fieldset ul li input::placeholder,
+  footer form fieldset ul li textarea::placeholder {
+    color: #ffffff;
+  }
+
+  footer form fieldset ul li input,
+  footer form fieldset ul li textarea,
+  footer form fieldset ul li .view-button {
+    font: inherit;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 12px 16px;
+  }
+
+  footer form fieldset ul li input:focus,
+  footer form fieldset ul li textarea:focus {
+    outline: none;
+    border-color: #3d6dff;
+  }
+
+  footer form fieldset ul li input:focus::placeholder,
+  footer form fieldset ul li textarea:focus::placeholder {
+    opacity: 0;
+  }
+
+  footer form fieldset ul li .view-button {
+    cursor: pointer;
+  }
+
+  footer img {
+    display: none;
+  }
+
+  footer .inner>div>div:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  footer .inner>div>div:last-of-type h2 a img {
+    width: 100%;
+    display: block;
+  }
+
+  footer .inner>div>div:last-of-type>div {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  footer .inner>div>div:last-of-type>div p {
+    margin-bottom: 8px;
+  }
+
+  footer .inner>div>div:last-of-type>div ul {
+    display: flex;
+    align-items: center;
+    width: 160px;
+    margin: 16px auto 0;
+    justify-content: space-between;
+  }
+
+  footer .inner>div>div:last-of-type>div ul li {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  footer .inner>div>div:last-of-type>div ul li:not(:nth-child(2)):not(:nth-child(3)) {
+    width: 16px;
+    height: 16px;
+  }
+
+  footer .inner>div>div:last-of-type>div ul li:first-child {
+    background-image: url("../images/instagram.png");
+  }
+
+  footer .inner>div>div:last-of-type>div ul li:nth-child(2) {
+    background-image: url("../images/youtube.png");
+    width: 18px;
+  }
+
+  footer .inner>div>div:last-of-type>div ul li:nth-child(3) {
+    background-image: url("../images/tiktok.png");
+    width: 16px;
+  }
+
+  footer .inner>div>div:last-of-type>div ul li:nth-child(4) {
+    background-image: url("../images/twitter.png");
+
+  }
+
+  footer .inner>div>div:last-of-type>div ul li:last-child {
+    background-image: url("../images/pinterest.png");
+  }
+
+  footer .inner>div>div:last-of-type>div ul li a {
+    display: block;
+    text-indent: -9999px;
+    width: 100%;
+    height: 20px;
+  }
+
+  footer .inner>p {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    /* margin-bottom: 8px; */
+    text-align: center;
+  }
+}
